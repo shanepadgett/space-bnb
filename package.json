@@ -2,6 +2,11 @@
   "name": "space-bnb",
   "version": "0.0.0",
   "description": "Travel and lodging reservations...for space!",
+  "now": {
+    "name": "space-bnb",
+    "alias": "space-bnb.now.sh",
+    "dotenv": true
+  },
   "scripts": {
     "dev": "nodemon -w server --exec \"babel-node server --presets env,stage-0\"",
     "build": "next build",
