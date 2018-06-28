@@ -1,0 +1,58 @@
+{
+  "name": "space-bnb",
+  "version": "0.0.0",
+  "description": "Travel and lodging reservations...for space!",
+  "now": {
+    "name": "space-bnb",
+    "alias": "space-bnb.now.sh",
+    "dotenv": true
+  },
+  "scripts": {
+    "dev": "nodemon -w server --exec \"babel-node server --presets env,stage-0\"",
+    "build": "next build",
+    "start": "NODE_ENV=production babel-node server --presets env,stage-0",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Philosec/space-bnb.git"
+  },
+  "author": "Shane Padgett <spadgett00@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Philosec/space-bnb/issues"
+  },
+  "homepage": "https://github.com/Philosec/space-bnb#readme",
+  "devDependencies": {
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.6",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.7",
+    "morgan": "^1.9.0",
+    "next": "^6.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "validator": "^10.4.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
+      "git add"
+    ]
+  }
+}
