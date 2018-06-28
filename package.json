@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Travel and lodging reservations...for space!",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -w server --exec \"babel-node server --presets env,stage-0\"",
+    "build": "next build",
+    "start": "NODE_ENV=production node server/index.js",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -15,6 +18,11 @@
     "url": "https://github.com/Philosec/space-bnb/issues"
   },
   "homepage": "https://github.com/Philosec/space-bnb#readme",
+  "devDependencies": {
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.6",
+    "standard": "^11.0.1"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
@@ -29,5 +37,17 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "validator": "^10.4.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
+      "git add"
+    ]
   }
 }
