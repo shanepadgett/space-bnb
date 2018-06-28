@@ -3,15 +3,17 @@ import bodyParser from 'body-parser'
 import next from 'next'
 import morgan from 'morgan'
 import routes from './routes/index'
-import connect from './db'
+import dotenv from 'dotenv'
+import connectToDB from './db'
 
-const port = 3000
-const env = 'development'
-const dev = env !== 'production'
+dotenv.config()
+
+const port = process.env.PORT || 3000
+const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-connect()
+connectToDB(dev)
 
 app
   .prepare()

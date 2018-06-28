@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon -w server --exec \"babel-node server --presets env,stage-0\"",
     "build": "next build",
-    "start": "NODE_ENV=production node server/index.js",
+    "start": "NODE_ENV=production babel-node server --presets env,stage-0",
     "precommit": "lint-staged"
   },
   "repository": {
