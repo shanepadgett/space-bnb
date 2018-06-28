@@ -3,7 +3,7 @@ import axios from 'axios'
 
 class Users extends Component {
   static async getInitialProps ({ req }) {
-    const response = await axios.get('http://localhost:3000/api/users')
+    const response = await axios.get('api/users')
     const data = response.data
     return {
       AllUsers: data
