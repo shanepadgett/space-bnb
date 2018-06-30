@@ -1,0 +1,7 @@
+{
+  "name": "space-bnb",
+  "alias": "space-bnb",
+  "env": {
+    "MONGODB_URI_PROD": "@space-bnb-mongo-url"
+  }
+}
