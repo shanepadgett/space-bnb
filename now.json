@@ -1,6 +1,6 @@
 {
   "name": "space-bnb",
-  "alias": "space-bnb.now.sh",
+  "alias": "space-bnb",
   "env": {
     "MONGODB_URI_PROD": "@space-bnb-mongo-url"
   }

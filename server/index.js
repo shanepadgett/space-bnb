@@ -4,13 +4,14 @@ import next from 'next'
 import morgan from 'morgan'
 import routes from './routes/index'
 import dotenv from 'dotenv'
+import path from 'path'
 import connectToDB from './db'
 
 dotenv.config()
 
 const port = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
+const app = next({ dir: path.join(__dirname, '../client'), dev })
 const handle = app.getRequestHandler()
 
 connectToDB(dev)
