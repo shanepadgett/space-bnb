@@ -7,7 +7,8 @@ const PageHead = ({title, description}) => (
     <meta charSet='utf-8' />
     <meta httpEquiv='content-language' content='en' />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    <link rel='stylesheet' href='/static/app.css' />
+    <link rel='stylesheet' href='https://bootswatch.com/4/lux/bootstrap.min.css' />
+    {/* <link rel='stylesheet' href='/static/app.css' /> */}
   </Head>
 )
 
