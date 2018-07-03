@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import Button from '../elements/Button'
+import Navbar from '../components/Navbar'
 
 const Index = () => (
-  <div className='container'>
-    <Button text='The Button' />
+  <div>
+    <Navbar />
     <Link href='/users'>
       <p>Users</p>
     </Link>
