@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header'
 
 const Index = () => (
   <div>
-    <Navbar />
+    <Header headerText='Select Travel Dates' />
     <Link href='/users'>
       <p>Users</p>
     </Link>

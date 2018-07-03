@@ -7,6 +7,7 @@ const Layout = ({children}) => (
     <style global jsx>{`
       body {
         background-color: #111111;
+        font-family: 'Montserrat', sans-serif;
       }
     `}</style>
   </div>

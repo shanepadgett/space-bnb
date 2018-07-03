@@ -8,6 +8,7 @@ const PageHead = ({title, description}) => (
     <meta httpEquiv='content-language' content='en' />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     <link rel='stylesheet' href='https://bootswatch.com/4/lux/bootstrap.min.css' />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
     {/* <link rel='stylesheet' href='/static/app.css' /> */}
   </Head>
 )
