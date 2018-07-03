@@ -1,6 +1,6 @@
 const HeaderText = ({ text }) => (
-  <div className='d-flex'>
-    <p className='m-0 my-auto'>
+  <div className='text-center'>
+    <p className='m-0'>
       {text || 'No Text Sent'}
     </p>
 

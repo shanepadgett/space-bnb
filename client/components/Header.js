@@ -2,24 +2,26 @@ import HeaderBrand from '../elements/HeaderBrand'
 import HeaderText from '../elements/HeaderText'
 import Button from '../elements/Button'
 
-const Header = ({ headerText, totalPrice }) => (
+const Header = ({ totalPrice }) => (
   <div className='header'>
     <div className='container-fluid'>
-      <div className='row d-flex justify-content-between'>
-        <div className='pl-3'>
+      <div className='d-flex flex-row'>
+        <div className='col-4'>
           <HeaderBrand />
         </div>
 
-        <HeaderText text={`Total Price $${totalPrice || 0}`} />
+        <div className='col-4 my-auto'>
+          <HeaderText text={`Total Price $${totalPrice || 0}`} />
+        </div>
 
-        <HeaderText text={headerText} />
-
-        <div className='d-flex'>
-          <div className='float-left my-auto'>
-            <Button text='Prev' />
-          </div>
-          <div className='float-right pl-5 pr-3 my-auto'>
-            <Button text='Next' />
+        <div className='col-4 my-auto'>
+          <div className='d-flex justify-content-end'>
+            <div className='float-left my-auto'>
+              <Button text='Prev' />
+            </div>
+            <div className='float-right pl-5'>
+              <Button text='Next' />
+            </div>
           </div>
         </div>
       </div>
