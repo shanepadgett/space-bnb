@@ -12,7 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/Philosec/space-bnb.git"
   },
-  "author": "Shane Padgett <spadgett00@gmail.com>",
+  "author": {
+    "name": "Shane Padgett",
+    "email": "spadgett00@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Joseph Emswiler",
+      "email": "josephemswiler@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Philosec/space-bnb/issues"

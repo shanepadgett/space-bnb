@@ -3,26 +3,19 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const Planet = new Schema({
-  name: String,
-  baseImageSrc: String,
-  bumbMapSrc: String,
+  name: {
+    type: String,
+    required: true
+  },
+  baseImageSrc: {
+    type: String,
+    required: true
+  },
+  bumpMapSrc: String,
   specMapSrc: String,
   resorts: [{
-    name: String,
-    price: Number,
-    summary: String,
-    amenities: [{
-      text: String
-    }],
-    images: [{
-      src: String
-    }],
-    reviews: [{
-      name: String,
-      image: String,
-      rating: Number,
-      summary: String
-    }]
+    type: Schema.Types.ObjectId,
+    ref: 'Resort'
   }]
 })
 
