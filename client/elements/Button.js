@@ -1,6 +1,6 @@
-const Button = ({text}) => (
+const Button = ({text, onClickHandler}) => (
   <div>
-    <button className='btn btn-block btn-primary'>{text}</button>
+    <button className='btn btn-block btn-primary' onClick={onClickHandler}>{text}</button>
 
     <style jsx>{`
       button {
