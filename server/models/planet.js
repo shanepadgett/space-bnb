@@ -4,6 +4,9 @@ const Schema = mongoose.Schema
 
 const Planet = new Schema({
   name: String,
+  baseImageSrc: String,
+  bumbMapSrc: String,
+  specMapSrc: String,
   resorts: [{
     name: String,
     price: Number,
