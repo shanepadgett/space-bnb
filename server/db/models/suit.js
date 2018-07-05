@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Rocket = new Schema({
+const Suit = new Schema({
   model: {
     type: String,
     required: true
@@ -15,11 +15,7 @@ const Rocket = new Schema({
     type: String,
     required: true
   },
-  features: [
-    {
-      text: String
-    }
-  ],
+  features: [String],
   image: {
     type: String,
     required: true
@@ -34,4 +30,4 @@ const Rocket = new Schema({
   }]
 })
 
-export default mongoose.model('Rocket', Rocket)
+export default mongoose.model('Suit', Suit)

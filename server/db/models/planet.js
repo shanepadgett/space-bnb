@@ -7,7 +7,7 @@ const Planet = new Schema({
     type: String,
     required: true
   },
-  baseImageSrc: {
+  diffuseSrc: {
     type: String,
     required: true
   },

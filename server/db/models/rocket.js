@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Resort = new Schema({
-  name: {
+const Rocket = new Schema({
+  model: {
     type: String,
     required: true
   },
@@ -15,20 +15,19 @@ const Resort = new Schema({
     type: String,
     required: true
   },
-  amenities: [
-    {
-      text: String
-    }
-  ],
-  images: [
-    {
-      src: String
-    }
-  ],
+  features: [String],
+  image: {
+    type: String,
+    required: true
+  },
+  renderUrl: {
+    type: String,
+    required: true
+  },
   reviews: [{
     type: Schema.Types.ObjectId,
     ref: 'Review'
   }]
 })
 
-export default mongoose.model('Resort', Resort)
+export default mongoose.model('Rocket', Rocket)
