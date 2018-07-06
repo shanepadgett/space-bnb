@@ -11,12 +11,11 @@ const generateResorts = (resortIdArr) => {
       faker.commerce.productAdjective()
     ]
 
-    const imagesArr = [
-      faker.image.city(),
-      faker.image.city(),
-      faker.image.city(),
-      faker.image.city()
-    ]
+    const imagesArr = []
+
+    for (let j = 0; j < 4; j++) {
+      imagesArr.push(`${faker.image.city()}?t=${Math.floor(Math.random() * 1530853934590)}`)
+    }
 
     const review = {
       _id: resortIdArr[i],

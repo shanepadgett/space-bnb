@@ -7,7 +7,9 @@
     "build": "next build client",
     "start": "NODE_ENV=production babel-node server --presets env,stage-0",
     "precommit": "lint-staged",
-    "seed": "\"babel-node server/db/seed.js --presets env,stage-0\""
+    "seed": "\"babel-node server/db/seed.js --presets env,stage-0\"",
+    "removeDeployments": "now rm space-bnb --yes",
+    "deploy": "now && now alias"
   },
   "repository": {
     "type": "git",
