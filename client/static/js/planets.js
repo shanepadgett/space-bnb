@@ -418,12 +418,15 @@ $(document).ready(() => {
       $('.container').hide()
     })
 
-    Object.keys(planets).forEach(item => {
-      $('.card-title').first().text() === planets[item].name ||
-        planets[item].name.split('-').includes($('.card-title').first().text())
-        ? false
-        : (planets[item].mesh.visible = false)
-    })
+    let selectPlanet = item => {
+      if ($('.card-title').first().text() === planets[item].name || planets[item].name.split('-').includes($('.card-title').first().text())) {
+        return false
+      } else {
+        planets[item].mesh.visible = false
+      }
+    }
+
+    Object.keys(planets).forEach(item => selectPlanet(item))
   })
 
   // Render, animate
