@@ -40,9 +40,9 @@ let planets = {
     radiusRatio: 1,
     segments: 50,
     images: [
-        '../static/images/earth.jpg',
-        '../static/images/earth-bump.jpg',
-        '../static/images/earth-water.jpg'
+      '../static/images/earth.jpg',
+      '../static/images/earth-bump.jpg',
+      '../static/images/earth-water.jpg'
     ],
     position: {
       x: 0,
@@ -60,9 +60,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/earth-clouds.png'
-    ],
+    images: ['../static/images/earth-clouds.png'],
     position: {
       x: 0,
       y: 0,
@@ -79,9 +77,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/moon.jpg'
-    ],
+    images: ['../static/images/moon.jpg'],
     position: {
       x: -0.5,
       y: 2.25,
@@ -98,9 +94,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/mars.jpg'
-    ],
+    images: ['../static/images/mars.jpg'],
     position: {
       x: 10,
       y: 5,
@@ -117,9 +111,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/jupiter.jpg'
-    ],
+    images: ['../static/images/jupiter.jpg'],
     position: {
       x: -0.5,
       y: -5,
@@ -136,9 +128,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/saturn.jpg'
-    ],
+    images: ['../static/images/saturn.jpg'],
     position: {
       x: 1,
       y: -15,
@@ -155,9 +145,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1.5,
     segments: 2,
-    images: [
-        '../static/images/saturn-ring.png'
-    ],
+    images: ['../static/images/saturn-ring.png'],
     position: {
       x: 1,
       y: -15,
@@ -174,9 +162,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/uranus.jpg'
-    ],
+    images: ['../static/images/uranus.jpg'],
     position: {
       x: -2.25,
       y: 4,
@@ -193,9 +179,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: [
-        '../static/images/neptune.jpg'
-    ],
+    images: ['../static/images/neptune.jpg'],
     position: {
       x: -10,
       y: -10,
@@ -212,9 +196,7 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 64,
-    images: [
-      '../static/images/stars.png'
-    ],
+    images: ['../static/images/stars.png'],
     position: {
       x: 0,
       y: 0,
@@ -227,10 +209,14 @@ let planets = {
   }
 }
 
+let $ = window.$
+let THREE = window.THREE
+let TWEEN = window.TWEEN
+
 $(document).ready(() => {
-// Animate CSS
-// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
-    $.fn.extend({
+  // Animate CSS
+  // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
+  $.fn.extend({
     animateCss: function (animationName, callback) {
       var animationEnd = (function (el) {
         var animations = {
@@ -260,7 +246,7 @@ $(document).ready(() => {
   // Set scene, camera, renderer
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
   let scene = new THREE.Scene()
-  
+
   let camera = new THREE.PerspectiveCamera(
     45,
     window.innerWidth / window.innerHeight,
@@ -268,37 +254,35 @@ $(document).ready(() => {
     1000
   )
   camera.position.z = 80
-  
+
   let renderer = new THREE.WebGLRenderer()
   renderer.setSize(window.innerWidth, window.innerHeight)
-  
+
   document.body.appendChild(renderer.domElement)
-  
+
   // Onload zoom
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
   let initZoom = () => {
+    let zoom = {
+      value: camera.position.z
+    }
+    let zoomEnd = {
+      value: 15
+    }
+    let tween = new TWEEN.Tween(zoom).to(zoomEnd, 800)
+    tween.onUpdate(() => {
+      camera.position.z = zoom.value
+    })
 
-      let zoom = {
-        value: camera.position.z
-      }
-      let zoomEnd = {
-        value: 15
-      }
-      let tween = new TWEEN.Tween(zoom).to(zoomEnd, 800)
-      tween.onUpdate(() => {
-        camera.position.z = zoom.value
-      })
-  
-      tween.easing(TWEEN.Easing.Quartic.InOut)
-  
-      tween.start()
-    
+    tween.easing(TWEEN.Easing.Quartic.InOut)
+
+    tween.start()
   }
 
   setTimeout(() => {
     initZoom()
-    }, 1400)
-  
+  }, 1400)
+
   $(window).resize(function () {
     camera = new THREE.PerspectiveCamera(
       45,
@@ -306,28 +290,26 @@ $(document).ready(() => {
       0.1,
       1000
     )
-    
-
 
     renderer.setSize(window.innerWidth, window.innerHeight)
-  
-    if ( $('.card-title').first().text() === '' ) {
+
+    if ($('.card-title').first().text() === '') {
       moveCamera(planets.earth)
     } else {
       moveCamera(planets[$('.card-title').first().text()])
     }
   })
-  
+
   // Add directional and ambient light
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
   let light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(5, 3, 5)
   scene.add(light)
   scene.add(new THREE.AmbientLight(0x333333))
-  
+
   // Create planet, clouds, starts
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
-  
+
   let createPlanet = (type, propOne, propTwo, images) => {
     switch (type) {
       case 'planet':
@@ -375,7 +357,7 @@ $(document).ready(() => {
         )
     }
   }
-  
+
   let addPlanet = (mesh, object) => {
     mesh.rotation.y += object.rotation.y
     mesh.position.set(object.position.x, object.position.y, object.position.z)
@@ -383,7 +365,7 @@ $(document).ready(() => {
     object.mesh = mesh
     scene.add(mesh)
   }
-  
+
   Object.keys(planets).forEach(item => {
     let itemMesh = createPlanet(
       planets[item].type,
@@ -393,9 +375,9 @@ $(document).ready(() => {
     )
     addPlanet(itemMesh, planets[item])
   })
-  
+
   let moveCamera = planetObject => {
-    if ( $('.container-fluid').css('display') === 'none' ) {
+    if ($('.container-fluid').css('display') === 'none') {
       $('.card-wrapper').show().animateCss('fadeInRight')
       $('.card-title').text(planetObject.name)
       $('.visit-span').text(`Visit ${planetObject.name}`)
@@ -416,55 +398,54 @@ $(document).ready(() => {
       camera.position.y = origin.y
       camera.position.z = origin.z
     })
-  
+
     tween.easing(TWEEN.Easing.Quartic.InOut)
-  
+
     tween.start()
   }
-  
+
   // Click event listener
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
-  let currentPlanet = planets.earth
-  
+  // let currentPlanet = planets.earth
+
   $('.planet-btn').click(function () {
     moveCamera(planets[this.dataset.name])
   })
-  
+
   $('.visit-btn').click(function () {
     $('.container-fluid').show().animateCss('fadeInRight')
     $('.container').animateCss('zoomOut', () => {
       $('.container').hide()
     })
-  
+
     Object.keys(planets).forEach(item => {
       $('.card-title').first().text() === planets[item].name ||
-      planets[item].name.split('-').includes($('.card-title').first().text()) ? 
-      false :
-      planets[item].mesh.visible = false
+        planets[item].name.split('-').includes($('.card-title').first().text())
+        ? false
+        : (planets[item].mesh.visible = false)
     })
   })
-  
+
   // Render, animate
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
   let render = function () {
-    requestAnimationFrame(render)
-  
+    window.requestAnimationFrame(render)
+
     Object.keys(planets).forEach(item => {
       planets[item].mesh.rotation.x += planets[item].rotation.x
       planets[item].mesh.rotation.y += planets[item].rotation.y
     })
-  
+
     renderer.render(scene, camera)
   }
-  
+
   render()
-  
+
   function animate () {
     camera.updateProjectionMatrix()
-    requestAnimationFrame(animate)
+    window.requestAnimationFrame(animate)
     TWEEN.update()
   }
-  
+
   animate()
-  
 })
