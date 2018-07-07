@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from '../components/Header'
 import axios from 'axios'
+import Space from '../components/Space'
 
 const Index = ({ resorts }) => (
   <div>
-    <Header headerText='Select Travel Dates' />
+    {/* <Header headerText='Select Travel Dates' />
     <h1 className='text-center'>Select Travel Dates</h1>
-    {resorts.map(resort => <img key={resort._id} src={resort.images[0]} />)}
+    {resorts.map(resort => <img key={resort._id} src={resort.images[0]} />)} */}
+    <Space />
     <style jsx>{`
       h1 {
         color: white;

@@ -13,7 +13,7 @@ import uranusImage from '../static/images/uranus.jpg'
 import neptuneImage from '../static/images/neptune.jpg'
 import starsImage from '../static/images/stars.png'
 
-export default Planets = {
+let PlanetsArray = {
   mercury: {
     name: 'mercury',
     type: 'planet',
@@ -241,3 +241,5 @@ export default Planets = {
     }
   }
 }
+
+export default PlanetsArray
