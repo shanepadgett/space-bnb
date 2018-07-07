@@ -5,7 +5,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/mercury.jpg'],
+    images: [
+      '../static/images/mercury.jpg'
+    ],
     position: {
       x: 3,
       y: 2.5,
@@ -22,7 +24,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/venus.jpg'],
+    images: [
+      '../static/images/venus.jpg'
+    ],
     position: {
       x: -0.75,
       y: -3,
@@ -60,7 +64,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/earth-clouds.png'],
+    images: [
+      '../static/images/earth-clouds.png'
+    ],
     position: {
       x: 0,
       y: 0,
@@ -77,7 +83,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/moon.jpg'],
+    images: [
+      '../static/images/moon.jpg'
+    ],
     position: {
       x: -0.5,
       y: 2.25,
@@ -94,7 +102,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/mars.jpg'],
+    images: [
+      '../static/images/mars.jpg'
+    ],
     position: {
       x: 10,
       y: 5,
@@ -111,7 +121,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/jupiter.jpg'],
+    images: [
+      '../static/images/jupiter.jpg'
+    ],
     position: {
       x: -0.5,
       y: -5,
@@ -128,7 +140,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/saturn.jpg'],
+    images: [
+      '../static/images/saturn.jpg'
+    ],
     position: {
       x: 1,
       y: -15,
@@ -145,7 +159,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1.5,
     segments: 2,
-    images: ['../static/images/saturn-ring.png'],
+    images: [
+      '../static/images/saturn-ring.png'
+    ],
     position: {
       x: 1,
       y: -15,
@@ -162,7 +178,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/uranus.jpg'],
+    images: [
+      '../static/images/uranus.jpg'
+    ],
     position: {
       x: -2.25,
       y: 4,
@@ -179,7 +197,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 50,
-    images: ['../static/images/neptune.jpg'],
+    images: [
+      '../static/images/neptune.jpg'
+    ],
     position: {
       x: -10,
       y: -10,
@@ -196,7 +216,9 @@ let planets = {
     mesh: null,
     radiusRatio: 1,
     segments: 64,
-    images: ['../static/images/stars.png'],
+    images: [
+      '../static/images/stars.png'
+    ],
     position: {
       x: 0,
       y: 0,
@@ -209,13 +231,13 @@ let planets = {
   }
 }
 
-let $ = window.$
-let THREE = window.THREE
-let TWEEN = window.TWEEN
+// let $ = window.$
+// let THREE = window.THREE
+// let TWEEN = window.TWEEN
 
 $(document).ready(() => {
-  // Animate CSS
-  // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
+// Animate CSS
+// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
   $.fn.extend({
     animateCss: function (animationName, callback) {
       var animationEnd = (function (el) {
@@ -406,7 +428,7 @@ $(document).ready(() => {
 
   // Click event listener
   // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-//
-  // let currentPlanet = planets.earth
+  let currentPlanet = planets.earth
 
   $('.planet-btn').click(function () {
     moveCamera(planets[this.dataset.name])
@@ -418,15 +440,12 @@ $(document).ready(() => {
       $('.container').hide()
     })
 
-    let selectPlanet = item => {
-      if ($('.card-title').first().text() === planets[item].name || planets[item].name.split('-').includes($('.card-title').first().text())) {
-        return false
-      } else {
-        planets[item].mesh.visible = false
-      }
-    }
-
-    Object.keys(planets).forEach(item => selectPlanet(item))
+    Object.keys(planets).forEach(item => {
+      $('.card-title').first().text() === planets[item].name ||
+      planets[item].name.split('-').includes($('.card-title').first().text()) ? 
+      false :
+      planets[item].mesh.visible = false
+    })
   })
 
   // Render, animate
