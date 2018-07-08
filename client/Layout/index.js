@@ -1,8 +1,10 @@
 import PageHead from './PageHead'
+import Space from '../components/Space'
 
 const Layout = ({children}) => (
   <div>
     <PageHead title='SpaceBNB' />
+    <Space />
     {children}
     <style global jsx>{`
       body {

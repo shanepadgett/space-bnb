@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from '../components/Header'
 import axios from 'axios'
-import Space from '../components/Space'
+import Link from 'next/link'
 
 const Index = ({ resorts }) => (
   <div>
-    {/* <Header headerText='Select Travel Dates' />
-    <h1 className='text-center'>Select Travel Dates</h1>
-    {resorts.map(resort => <img key={resort._id} src={resort.images[0]} />)} */}
-    <Space />
+    <Link href='/about'><a>About</a></Link>
     <style jsx>{`
       h1 {
+        color: white;
+      }
+      a {
         color: white;
       }
     `}</style>

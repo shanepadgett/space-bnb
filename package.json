@@ -64,5 +64,8 @@
       "standard --fix",
       "git add"
     ]
+  },
+  "standard": {
+    "globals": [ "$", "THREE", "TWEEN" ]
   }
 }
