@@ -1,18 +1,35 @@
+import { Component } from 'react'
 import PageHead from './PageHead'
-import Space from '../components/Space'
+import threeEntryPoint from '../lib/threeJS/index'
 
-const Layout = ({children}) => (
-  <div>
-    <PageHead title='SpaceBNB' />
-    <Space />
-    {children}
-    <style global jsx>{`
-      body {
-        background-color: #111111;
-        font-family: 'Montserrat', sans-serif;
-      }
-    `}</style>
-  </div>
-)
+class Layout extends Component {
+  componentDidMount () {
+    threeEntryPoint(this.threeRootElement)
+  }
+
+  render () {
+    return (
+      <div>
+        <PageHead title='SpaceBNB' />
+        <div ref={(element) => { this.threeRootElement = element }} />
+        {this.props.children}
+        <style global jsx>{`
+          body {
+            font-family: 'Montserrat', sans-serif;
+          }
+          canvas {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -9999;
+          }
+        `}</style>
+      </div>
+    )
+  }
+}
 
 export default Layout

@@ -1,32 +1,23 @@
-import React from 'react'
-import Header from '../components/Header'
-import axios from 'axios'
+import { Component } from 'react'
 import Link from 'next/link'
+import { Button } from 'reactstrap'
+import EventBus from 'eventing-bus'
+import events from '../lib/constants/eventConstants'
 
-const Index = ({ resorts }) => (
-  <div>
-    <Link href='/about'><a>About</a></Link>
-    <style jsx>{`
-      h1 {
-        color: white;
-      }
-      a {
-        color: white;
-      }
-    `}</style>
-  </div>
-)
+class Index extends Component {
+  onPlanetSelectButtonPressed (planetName, e) {
+    e.preventDefault()
+    EventBus.publish(events.selectPlanet, planetName)
+  }
 
-Index.getInitialProps = async ({ req }) => {
-  if (req) {
-    const baseUrl = req.headers.host
-    const res = await axios.get(`http://${baseUrl}/api/resorts`)
-    const data = res.data
-    return { resorts: data }
-  } else {
-    const res = await axios.get('api/resorts')
-    const data = res.data
-    return { resorts: data }
+  render () {
+    return (
+      <div>
+        <Link href='/about'><Button color='primary'>About</Button></Link>
+        <Button color='secondary' onClick={this.onPlanetSelectButtonPressed.bind(this, 'venus')}>Venus</Button>
+        <Button color='secondary' onClick={this.onPlanetSelectButtonPressed.bind(this, 'mercury')}>Mercury</Button>
+      </div>
+    )
   }
 }
 
