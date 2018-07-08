@@ -1,6 +1,6 @@
 import 'bootswatch/dist/lux/bootstrap.css'
 import App, {Container} from 'next/app'
-import Layout from '../Layout'
+import Layout from '../layout'
 
 export default class MyApp extends App {
   render () {
