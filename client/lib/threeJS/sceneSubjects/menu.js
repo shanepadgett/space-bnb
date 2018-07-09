@@ -63,7 +63,7 @@ export default class Menu extends Component {
           
           .card {
             background-color: rgba(0, 0, 0, 0.5) !important;
-            right: -100px;
+            right: 0px;
             -webkit-animation: slide 0.5s forwards;
             -webkit-animation-delay: 2s;
             animation: slide 0.5s forwards;
