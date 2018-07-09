@@ -1,10 +1,8 @@
-import Link from 'next/link'
-import { Button } from 'reactstrap'
+import AboutComponent from '../components/about'
 
 const About = () => (
   <div>
-    <h1>About page</h1>
-    <Link href='/'><Button color='danger'>Home</Button></Link>
+    <AboutComponent />
   </div>
 )
 

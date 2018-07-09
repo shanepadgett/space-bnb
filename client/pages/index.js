@@ -17,7 +17,8 @@ class Index extends Component {
     this.toggle = this.toggle.bind(this)
     this.state = {
       dropdownOpen: false,
-      selection: 'Earth'
+      selection: 'Earth',
+      showMenu: false
     }
   }
 
@@ -32,14 +33,15 @@ class Index extends Component {
     EventBus.publish(events.selectPlanet, planetName)
 
     this.setState({
-      selection: planetName
+      selection: planetName,
+      showMenu: true
     })
   }
 
   render () {
     return (
       <div>
-        <Menu selection={this.state.selection} />
+        <Menu selection={this.state.selection} showMenu={this.state.showMenu} />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle className='btn btn-outline-danger'>

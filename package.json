@@ -55,6 +55,7 @@
     "next": "^6.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-move": "^2.7.0",
     "react-popper": "^1.0.0",
     "react-transition-group": "^2.4.0",
     "reactstrap": "^6.2.0",
