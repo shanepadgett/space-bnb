@@ -1,5 +1,4 @@
 import { Component } from 'react'
-// import Link from 'next/link'
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -9,6 +8,7 @@ import {
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
+import Menu from '../lib/threeJS/sceneSubjects/menu'
 
 class Index extends Component {
   constructor (props) {
@@ -16,7 +16,8 @@ class Index extends Component {
 
     this.toggle = this.toggle.bind(this)
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      selection: 'Earth'
     }
   }
 
@@ -29,13 +30,17 @@ class Index extends Component {
   onPlanetSelectButtonPressed (planetName, e) {
     e.preventDefault()
     EventBus.publish(events.selectPlanet, planetName)
+
+    this.setState({
+      selection: planetName
+    })
   }
 
   render () {
     return (
       <div>
+        <Menu selection={this.state.selection} />
         <div className='dropdown-wrapper'>
-          {/* <Link href='/about'><Button color='primary'>About</Button></Link> */}
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle className='btn btn-outline-danger'>
               <i className='fas fa-angle-right' />
@@ -65,22 +70,6 @@ class Index extends Component {
             bottom: 100px; 
             left: 0;
             width: 100%;
-          }
-          
-          .card-wrapper {
-            position: absolute; 
-            width: 100%;
-            right: 0;
-            top: 100px;
-            display: none;
-          }
-          
-          .card {
-            background: rgba(0, 0, 0, 0.5);
-          }
-          
-          .card-title {
-            color: #fff;
           }
           
           .dropdown-menu {
