@@ -1,3 +1,4 @@
+
 let planets = {
   mercury: {
     name: 'mercury',
@@ -230,10 +231,6 @@ let planets = {
     }
   }
 }
-
-// let $ = window.$
-// let THREE = window.THREE
-// let TWEEN = window.TWEEN
 
 $(document).ready(() => {
 // Animate CSS
