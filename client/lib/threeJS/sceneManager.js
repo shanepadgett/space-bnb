@@ -22,6 +22,13 @@ export default canvas => {
   const renderer = buildRender(screenDimensions)
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
+  const initCameraTarget = {
+    x: planetConfig.earth.transform.position.px,
+    y: planetConfig.earth.transform.position.py,
+    z: planetConfig.earth.transform.position.pz + 5
+  }
+
+  moveCameraToTarget(initCameraTarget, 1.5)
 
   function buildScene () {
     const scene = new THREE.Scene()
@@ -103,20 +110,29 @@ export default canvas => {
       y: planetConfig[planetName].transform.position.py,
       z: planetConfig[planetName].transform.position.pz + 5
     }
-    const origin = {
-      x: camera.position.x,
-      y: camera.position.y,
-      z: camera.position.z
-    }
 
-    const tween = new TWEEN.Tween(origin).to(target)
-    tween.onUpdate(() => {
-      camera.position.x = origin.x
-      camera.position.y = origin.y
-      camera.position.z = origin.z
-    })
-    tween.easing(TWEEN.Easing.Quartic.InOut)
-    tween.start()
+    moveCameraToTarget(target)
+  }
+
+  function moveCameraToTarget (target, delayInSeconds = 0) {
+    delayInSeconds *= 1000
+    setTimeout(() => {
+      const origin = {
+        x: camera.position.x,
+        y: camera.position.y,
+        z: camera.position.z
+      }
+
+      const tween = new TWEEN.Tween(origin).to(target)
+
+      tween.onUpdate(() => {
+        camera.position.x = origin.x
+        camera.position.y = origin.y
+        camera.position.z = origin.z
+      })
+      tween.easing(TWEEN.Easing.Quartic.InOut)
+      tween.start()
+    }, delayInSeconds)
   }
 
   EventBus.on(events.selectPlanet, onPlanetSelected)
