@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 
-export default scene => { 
-
+export default scene => {
   const light = new THREE.DirectionalLight(0xffffff, 1)
 
   light.position.set(5, 3, 5)
