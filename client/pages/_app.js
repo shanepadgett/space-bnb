@@ -1,4 +1,5 @@
 import 'bootswatch/dist/lux/bootstrap.css'
+import 'react-datepicker/dist/react-datepicker.css'
 import App, {Container} from 'next/app'
 import Layout from '../layout'
 

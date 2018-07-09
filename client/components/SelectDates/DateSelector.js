@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
-import 'react-datepicker/dist/react-datepicker.css'
 
 export default class DateSelector extends Component {
   constructor (props) {
