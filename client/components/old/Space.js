@@ -1,5 +1,3 @@
-// import React, { Component } from 'react'
-
 const Space = () => (
   <div className='space.js'>
     <div id='space' />

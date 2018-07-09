@@ -1,6 +1,6 @@
-import HeaderBrand from '../elements/HeaderBrand'
-import HeaderText from '../elements/HeaderText'
-import Button from '../elements/Button'
+import HeaderBrand from './HeaderBrand'
+import HeaderText from './HeaderText'
+import Button from './Button'
 
 const Header = ({ totalPrice }) => (
   <div className='header'>
