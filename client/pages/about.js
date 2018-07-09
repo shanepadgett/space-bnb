@@ -1,8 +1,12 @@
-import AboutComponent from '../components/about'
+import SpaceScreen from '../components/SpaceScreen'
+import DateWrapper from '../components/SelectDates/DateWrapper'
+import NavButtons from '../components/NavButtons'
 
 const About = () => (
   <div>
-    <AboutComponent />
+    <SpaceScreen />
+    <NavButtons />
+    <DateWrapper />
   </div>
 )
 

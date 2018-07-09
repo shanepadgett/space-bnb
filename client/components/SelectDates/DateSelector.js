@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
-
 import 'react-datepicker/dist/react-datepicker.css'
 
-export default class aboutDates extends Component {
+export default class DateSelector extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -33,10 +32,10 @@ export default class aboutDates extends Component {
       <Container className='text-center'>
         <Row>
           <Col xs='6'>
-            Depature
+            <h1>Depart</h1>
           </Col>
           <Col xs='6'>
-            Return
+            <h1>Return</h1>
           </Col>
         </Row>
         <Row>
@@ -53,10 +52,13 @@ export default class aboutDates extends Component {
             />
           </Col>
         </Row>
-        <style global jsx>{`           
+        <style global jsx>{`
+              h1 {
+                color: #919aa1;
+              }           
               .react-datepicker-wrapper input {
                 background: transparent;
-                color: #919aa1;
+                color: #fff;
                 border: 1px solid #919aa1;
               }
     

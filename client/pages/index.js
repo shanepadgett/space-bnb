@@ -8,7 +8,7 @@ import {
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
-import Menu from '../lib/threeJS/sceneSubjects/menu'
+import PlanetMenu from '../components/PlanetMenu'
 
 class Index extends Component {
   constructor (props) {
@@ -41,7 +41,7 @@ class Index extends Component {
   render () {
     return (
       <div>
-        <Menu selection={this.state.selection} showMenu={this.state.showMenu} />
+        <PlanetMenu selection={this.state.selection} showMenu={this.state.showMenu} />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle className='btn btn-outline-danger'>

@@ -2,18 +2,16 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import { Container, Row, Col, Button } from 'reactstrap'
 
-export default class aboutButtons extends Component {
+export default class NavButtons extends Component {
   render () {
     return (
       <div className='home-btn-wrapper'>
-        <Container >
+        <Container fluid>
           <Row>
-            <Col xs='6'>
+            <Col xs='12'>
               <Link href='/'>
-                <Button color='btn btn-outline-secondary'>Home</Button>
+                <Button color='btn btn-outline-secondary m-3'>Home</Button>
               </Link>
-            </Col>
-            <Col xs='6'>
               <Link href='#'>
                 <Button color='btn btn-outline-secondary'>Next</Button>
               </Link>
@@ -22,9 +20,7 @@ export default class aboutButtons extends Component {
         </Container>
         <style global jsx>{`           
               .home-btn-wrapper {
-                text-align: center;
-                position: absolute; 
-                bottom: 100px;
+                text-align: right;
                 width: 100%
               }
     

@@ -12,7 +12,7 @@ import {
   Button
 } from 'reactstrap'
 
-export default class Menu extends Component {
+export default class PlanetMenu extends Component {
   createMenu (planet) {
     if (!this.props.showMenu || !planet || planet.toLowerCase() === 'earth') {
       return
