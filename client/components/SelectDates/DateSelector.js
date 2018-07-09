@@ -32,20 +32,14 @@ export default class DateSelector extends Component {
       <Container className='text-center'>
         <Row>
           <Col xs='6'>
-            <h1>Depart</h1>
-          </Col>
-          <Col xs='6'>
-            <h1>Return</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs='6'>
+            <h4>Depart</h4>
             <DatePicker className='text-center pb-3 pt-3'
               selected={this.state.startDate}
               onChange={this.setStartDate}
             />
           </Col>
           <Col xs='6'>
+            <h4>Return</h4>
             <DatePicker className='text-center pb-3 pt-3'
               selected={this.state.endDate}
               onChange={this.setEndDate}
@@ -53,13 +47,14 @@ export default class DateSelector extends Component {
           </Col>
         </Row>
         <style global jsx>{`
-              h1 {
-                color: #919aa1;
-              }           
+              h4 {
+                color: #919aa1 !important;
+              }
               .react-datepicker-wrapper input {
                 background: transparent;
                 color: #fff;
                 border: 1px solid #919aa1;
+                width: 125px;
               }
     
               .btn-outline-secondary:hover {

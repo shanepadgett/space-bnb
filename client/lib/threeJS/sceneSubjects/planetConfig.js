@@ -3,6 +3,7 @@ import * as THREE from 'three'
 export default {
   mercury: {
     name: 'mercury',
+    nickname: 'The Swift Planet',
     radius: 1,
     segments: 50,
     images: {
@@ -29,6 +30,7 @@ export default {
   },
   venus: {
     name: 'venus',
+    nickname: 'The Morning Star',
     radius: 1,
     segments: 50,
     images: {
@@ -55,6 +57,7 @@ export default {
   },
   earth: {
     name: 'earth',
+    nickname: 'The Blue Planet',
     radius: 1,
     segments: 50,
     images: {
@@ -80,6 +83,7 @@ export default {
   },
   moon: {
     name: 'moon',
+    nickname: 'Luna',
     radius: 1,
     segments: 50,
     images: {
@@ -105,6 +109,7 @@ export default {
   },
   mars: {
     name: 'mars',
+    nickname: 'The Red Planet',
     radius: 1,
     segments: 50,
     images: {
@@ -130,6 +135,7 @@ export default {
   },
   jupiter: {
     name: 'jupiter',
+    nickname: 'The Giant Planet',
     radius: 1,
     segments: 50,
     images: {
@@ -155,6 +161,7 @@ export default {
   },
   saturn: {
     name: 'saturn',
+    nickname: 'The Ringed Planet',
     radius: 1,
     segments: 50,
     images: {
@@ -180,6 +187,7 @@ export default {
   },
   uranus: {
     name: 'uranus',
+    nickname: 'The Ice Giant',
     radius: 1,
     segments: 50,
     images: {
@@ -205,6 +213,7 @@ export default {
   },
   neptune: {
     name: 'neptune',
+    nickname: 'The Blue Planet',
     radius: 1,
     segments: 50,
     images: {
