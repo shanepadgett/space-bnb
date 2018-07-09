@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
@@ -37,8 +37,9 @@ class Index extends Component {
             <i className='fas fa-angle-left' />
           </DropdownToggle>
           <DropdownMenu className='drop-down'>
+            <DropdownItem header>Planets</DropdownItem>
             {Object.keys(planetConfig).map(key => {
-              return <DropdownItem key={key} color='secondary' onClick={this.onPlanetSelectButtonPressed.bind(this, key)}>{key.charAt(0).toUpperCase().concat(key.slice(1))}</DropdownItem>
+              return <DropdownItem key={key} className='planet-btn' onClick={this.onPlanetSelectButtonPressed.bind(this, key)}>{key.charAt(0).toUpperCase().concat(key.slice(1))}</DropdownItem>
             })}
           </DropdownMenu>
         </ButtonDropdown>
@@ -50,40 +51,17 @@ class Index extends Component {
             left: 0;
             width: 100%;
           }
-          .container-fluid { 
-            background: rgba(0, 0, 0, 0.8);
-            width: 100%; 
-            height: 100%;
-            position: absolute; 
-            display: none;
-          }
-          
-          .card-wrapper {
-            position: absolute; 
-            width: 100%;
-            right: 0;
-            top: 100px;
-            display: none;
-          }
-          
-          .card {
-            background: rgba(0, 0, 0, 0.5);
-          }
-          
-          .card-title {
-            color: #fff;
-          }
-          
-          .dropdown-menu {
+
+          .drop-down {
             background: rgba(0, 0, 0, 0.5);
             width: 155px;
             color: #fff;
           }
 
-          
           .planet-btn {
             color: #fff;
             border-radius: 2px;
+            background: rgba(0, 0, 0, 0.5);
           }
           
           .btn-outline-danger:hover {
