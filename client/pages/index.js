@@ -1,6 +1,11 @@
 import { Component } from 'react'
-// import Link from 'next/link'
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import Link from 'next/link'
+import {
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
@@ -28,22 +33,31 @@ class Index extends Component {
 
   render () {
     return (
-      <div className='dropdown-wrapper'>
-        {/* <Link href='/about'><Button color='primary'>About</Button></Link> */}
-        <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle className='btn btn-outline-danger'>
-            <i className='fas fa-angle-right' />
+      <div>
+        <div className='dropdown-wrapper'>
+          {/* <Link href='/about'><Button color='primary'>About</Button></Link> */}
+          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle className='btn btn-outline-danger'>
+              <i className='fas fa-angle-right' />
               Select Planet
-            <i className='fas fa-angle-left' />
-          </DropdownToggle>
-          <DropdownMenu className='drop-down'>
-            <DropdownItem header>Planets</DropdownItem>
-            {Object.keys(planetConfig).map(key => {
-              return <DropdownItem key={key} className='planet-btn' onClick={this.onPlanetSelectButtonPressed.bind(this, key)}>{key.charAt(0).toUpperCase().concat(key.slice(1))}</DropdownItem>
-            })}
-          </DropdownMenu>
-        </ButtonDropdown>
-        <style jsx>{` 
+              <i className='fas fa-angle-left' />
+            </DropdownToggle>
+            <DropdownMenu className='drop-down'>
+              {Object.keys(planetConfig).map(key => {
+                return (
+                  <DropdownItem
+                    key={key}
+                    color='secondary'
+                    onClick={this.onPlanetSelectButtonPressed.bind(this, key)}
+                  >
+                    {key.charAt(0).toUpperCase().concat(key.slice(1))}
+                  </DropdownItem>
+                )
+              })}
+            </DropdownMenu>
+          </ButtonDropdown>
+        </div>
+        <style global jsx>{` 
           .dropdown-wrapper {
             text-align: center;
             position: absolute; 
@@ -51,11 +65,34 @@ class Index extends Component {
             left: 0;
             width: 100%;
           }
-
-          .drop-down {
+          
+          .card-wrapper {
+            position: absolute; 
+            width: 100%;
+            right: 0;
+            top: 100px;
+            display: none;
+          }
+          
+          .card {
             background: rgba(0, 0, 0, 0.5);
-            width: 155px;
+          }
+          
+          .card-title {
             color: #fff;
+          }
+          
+          .dropdown-menu {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5) !important;            
+          }
+
+          .dropdown-item {            
+            color: #fff !important;
+          }
+
+          .dropdown-item:hover {            
+            background: rgba(63, 63, 63, 0.5) !important;
           }
 
           .planet-btn {
@@ -133,7 +170,7 @@ class Index extends Component {
                 color: #000;
               }
             }
-      `}</style>
+        `}</style>
       </div>
     )
   }
