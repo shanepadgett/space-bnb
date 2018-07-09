@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -43,6 +43,7 @@ class Index extends Component {
               <i className='fas fa-angle-left' />
             </DropdownToggle>
             <DropdownMenu className='drop-down'>
+              <DropdownItem header>Planets</DropdownItem>
               {Object.keys(planetConfig).map(key => {
                 return (
                   <DropdownItem
@@ -102,7 +103,7 @@ class Index extends Component {
           }
           
           .btn-outline-danger:hover {
-            color: #000;
+            color: #000 !important;
           }
           
           .fa-angle-right {
