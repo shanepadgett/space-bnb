@@ -1,18 +1,43 @@
 import React, { Component } from 'react'
 import { Jumbotron, Container } from 'reactstrap'
 import DateSelector from './DateSelector'
+import Planets from '../../lib/threeJS/sceneSubjects/planetConfig'
+import moment from 'moment'
 
 export default class DateWrapper extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      startDate: moment(),
+      endDate: moment()
+    }
+    this.setStartDate = this.setStartDate.bind(this)
+    this.setEndDate = this.setEndDate.bind(this)
+  }
+
+  setStartDate (date) {
+    this.setState({
+      startDate: date
+    })
+  }
+
+  setEndDate (date) {
+    this.setState({
+      endDate: date
+    })
+  }
+
   render () {
     return (
       <div>
         <Jumbotron className='pt-4'>
           <Container>
-            <h1 className='display-4'>Mercury</h1>
+            <h1 className='display-4'>{this.props.selection}</h1>
             <p className='lead'>Select your dates of travel:</p>
-            <DateSelector />
+            <DateSelector setEndDate={this.props.setEndDate} setStartDate={this.props.setStartDate} startDate={this.props.startDate} endDate={this.props.endDate} />
             <Container className='info-text text-justify mt-5'>
-              <h3 className='planet-nickname'>The Swift Planet</h3>
+              <h3 className='planet-nickname'>{Planets[this.props.selection].nickname}</h3>
               <hr className='my-2 mt-3 mb-3' />
               <p>Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods. Like Venus, Mercury orbits the Sun within Earth's orbit as an inferior planet, and never exceeds 28° away from the Sun. When viewed from Earth, this proximity to the Sun means the planet can only be seen near the western or eastern horizon during the early evening or early morning. At this time it may appear as a bright star-like object, but is often far more difficult to observe than Venus. The planet telescopically displays the complete range of phases, similar to Venus and the Moon, as it moves in its inner orbit relative to Earth, which reoccurs over the so-called synodic period approximately every 116 days.
               </p>

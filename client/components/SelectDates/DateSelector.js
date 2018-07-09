@@ -33,15 +33,15 @@ export default class DateSelector extends Component {
           <Col xs='6'>
             <h4>Depart</h4>
             <DatePicker className='text-center pb-3 pt-3'
-              selected={this.state.startDate}
-              onChange={this.setStartDate}
+              selected={this.props.startDate}
+              onChange={this.props.setStartDate}
             />
           </Col>
           <Col xs='6'>
             <h4>Return</h4>
             <DatePicker className='text-center pb-3 pt-3'
-              selected={this.state.endDate}
-              onChange={this.setEndDate}
+              selected={this.props.endDate}
+              onChange={this.props.setEndDate}
             />
           </Col>
         </Row>

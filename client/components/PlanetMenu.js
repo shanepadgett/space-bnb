@@ -33,7 +33,7 @@ export default class PlanetMenu extends Component {
             Surface gravity‎: ‎8.87 m/s2; 0.904 g <br />
             Surface area‎: ‎4.6023×108 km2 <br />
           </CardText>
-          <Link href='/about'>
+          <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
             <Button className='btn btn-outline-danger'>
               <i className='fas fa-angle-right' />
               Visit {this.props.selection}
