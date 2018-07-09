@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import {
+  Container,
+  Row,
+  Col,
   Card,
   CardText,
   CardBody,
@@ -44,12 +47,12 @@ export default class Menu extends Component {
 
   render () {
     return (
-      <div className='container menu-wrapper'>
-        <div className='row'>
-          <div className='offset-md-6 col-md-6'>
+      <Container className='menu-wrapper'>
+        <Row>
+          <Col md={{ size: 6, offset: 6 }}>
             {this.createMenu(this.props.selection)}
-          </div>
-        </div>
+          </Col>
+        </Row>
         <style global jsx>{`
           .menu-wrapper {
             position: absolute; 
@@ -79,7 +82,7 @@ export default class Menu extends Component {
             100% { right: 10px; }
           }
       `}</style>
-      </div>
+      </Container>
     )
   }
 }

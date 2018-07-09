@@ -1,27 +1,31 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import { Button } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 
 export default class aboutButtons extends Component {
   render () {
     return (
-      <div>
-        <div className='conatiner home-btn-wrapper'>
-          <div className='row'>
-            <div className='col-6'>
-              <Link href='/'><Button color='btn btn-outline-secondary'>Home</Button></Link>
-            </div>
-            <div className='col-6'>
-              <Link href='#'><Button color='btn btn-outline-secondary'>Next</Button></Link>
-            </div>
-          </div>
-        </div>
+      <div className='home-btn-wrapper'>
+        <Container >
+          <Row>
+            <Col xs='6'>
+              <Link href='/'>
+                <Button color='btn btn-outline-secondary'>Home</Button>
+              </Link>
+            </Col>
+            <Col xs='6'>
+              <Link href='#'>
+                <Button color='btn btn-outline-secondary'>Next</Button>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
         <style global jsx>{`           
               .home-btn-wrapper {
                 text-align: center;
                 position: absolute; 
                 bottom: 100px;
-                width: 100%;
+                width: 100%
               }
     
               .btn-outline-secondary:hover {

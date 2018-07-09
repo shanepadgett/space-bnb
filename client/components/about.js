@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import SpaceScreen from './SpaceScreen'
 import AboutJumbo from './aboutJumbo'
-import AboutDates from './aboutDates'
 import AboutButtons from './aboutButtons'
 
 export default class about extends Component {
@@ -10,7 +9,6 @@ export default class about extends Component {
       <div>
         <SpaceScreen />
         <AboutJumbo />
-        <AboutDates />
         <AboutButtons />
       </div>
     )
