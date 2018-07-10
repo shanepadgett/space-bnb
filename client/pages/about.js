@@ -42,13 +42,11 @@ export default class About extends Component {
       this.state.endDate.format('MM-DD-YYYY')
     )
   }
-  static async getInitialProps ({ query }) {
-    return { query }
-  }
 
   render () {
     return (
       <div>
+        <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
         <SpaceScreen />
         <NavButtons
           dates={{
@@ -57,7 +55,7 @@ export default class About extends Component {
             end: this.state.endDate.format('MM-DD-YYYY')
           }}
         />
-        <ProgressBar />
+        <ProgressBar progressValue='20' />
         <DateWrapper
           selection={this.props.query.name}
           setEndDate={this.setEndDate}
@@ -65,6 +63,12 @@ export default class About extends Component {
           startDate={this.state.startDate}
           endDate={this.state.endDate}
         />
+        <style global jsx>{`
+          .logo-img {
+            position: absolute;
+            height: 52px;
+          }
+        `}</style>
       </div>
     )
   }

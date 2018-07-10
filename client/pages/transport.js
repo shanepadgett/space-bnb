@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TransportNavButtons from '../components/Transport/TransportNavButtons'
+import ProgressBar from '../components/ProgressBar'
 import TransportModel from '../components/Transport/TransportModel'
 import TransportDetail from '../components/Transport/TransportDetail'
 import { Container, Row, Col } from 'reactstrap'
@@ -9,6 +10,7 @@ export default class transport extends Component {
     return (
       <div className='transport reservation-bg'>
         <TransportNavButtons />
+        <ProgressBar progressValue='40' />
         <Container>
           <Row>
             <Col sm='6'>

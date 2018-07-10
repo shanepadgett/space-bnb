@@ -26,7 +26,7 @@ export default class Resort extends Component {
     return (
       <div className='reservation-bg'>
         <NavButtons />
-        <ProgressBar />
+        <ProgressBar progressValue='40' />
         <Container>
           <h1 className='text-center display-4 mt-2 mb-0 text-secondary'>
             Select Resort
@@ -40,7 +40,18 @@ export default class Resort extends Component {
             {this.props.resorts.map(resort => <ResortCard resort={resort} />)}
           </Row>
         </Container>
-
+        <style global jsx>{`
+          .btn-outline-danger {
+              border: 1px solid #FC5C65 !important;
+              color: #FC5C65 !important;
+            }
+            
+            .btn-outline-danger:hover {
+              color: #000 !important;
+              background: #FC5C65 !important;
+              border: 1px solid #FC5C65 !important;
+            }
+        `}</style>
         {/* <style jsx>{`
           .resort-wrapper {
             margin-top: 20px;

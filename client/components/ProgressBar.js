@@ -5,7 +5,7 @@ export default class ProgressBar extends Component {
   render () {
     return (
       <div>
-        <Progress color='danger' value='25' />
+        <Progress className='mb-3' value={this.props.progressValue} />
         <style global jsx>{`           
           .progress {
             background-color: transparent !important;

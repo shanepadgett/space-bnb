@@ -52,6 +52,7 @@ class Index extends Component {
   render () {
     return (
       <div>
+        <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
         <PlanetMenu selection={this.state.selection} showMenu={this.state.showMenu} />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -76,7 +77,11 @@ class Index extends Component {
             </DropdownMenu>
           </ButtonDropdown>
         </div>
-        <style global jsx>{` 
+        <style global jsx>{`
+          .logo-img {
+            position: absolute;
+            height: 52px;
+          }
           .dropdown-wrapper {
             text-align: center;
             position: absolute; 
@@ -103,9 +108,16 @@ class Index extends Component {
             border-radius: 2px;
             background: rgba(0, 0, 0, 0.5);
           }
+
+          .btn-outline-danger {
+            border: 1px solid #FC5C65 !important;
+            color: #FC5C65 !important;
+          }
           
           .btn-outline-danger:hover {
             color: #000 !important;
+            background: #FC5C65 !important;
+            border: 1px solid #FC5C65 !important;
           }
           
           .fa-angle-right {
@@ -123,7 +135,7 @@ class Index extends Component {
             @-webkit-keyframes bounceRight {
               0%, 100% {
                 -webkit-transform: translateX(-5px);
-                color: #CB5A54;
+                color: #FC5C65;
               }
               50% {
                 -webkit-transform: translateX(-10px);
@@ -133,7 +145,7 @@ class Index extends Component {
             @keyframes bounceRight {
               0%, 100% {
                 transform: translateX(-5px);
-                color: #CB5A54;
+                color: #FC5C65;
               }
               50% {
                 transform: translateX(-10px);
@@ -156,7 +168,7 @@ class Index extends Component {
             @-webkit-keyframes bounceLeft {
               0%, 100% {
                 -webkit-transform: translateX(5px);
-                color: #CB5A54;
+                color: #FC5C65;
               }
               50% {
                 -webkit-transform: translateX(10px);
@@ -166,7 +178,7 @@ class Index extends Component {
             @keyframes bounceLeft {
               0%, 100% {
                 transform: translateX(5px);
-                color: #CB5A54;
+                color: #FC5C65;
               }
               50% {
                 transform: translateX(10px);
