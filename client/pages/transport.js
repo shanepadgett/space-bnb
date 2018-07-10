@@ -8,6 +8,13 @@ import Logo from '../components/Global/Logo'
 import SpaceScreen from '../components/Global/SpaceScreen'
 
 export default class transport extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      rocket: 'FALCON-HEAVY'
+    }
+  }
   static async getInitialProps ({ query }) {
     return { query }
   }
@@ -25,10 +32,10 @@ export default class transport extends Component {
             <p className='lead'>Available transport:</p>
             <Row>
               <Col md='5' lg='3' className='mb-3'>
-                <TransportModel />
+                <TransportModel rocket={this.state.rocket} />
               </Col>
               <Col md='7' lg='9'>
-                <TransportDetail />
+                <TransportDetail rocket={this.state.rocket} />
               </Col>
             </Row>
           </Container>

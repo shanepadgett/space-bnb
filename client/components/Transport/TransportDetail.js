@@ -17,8 +17,17 @@ export default class TransportDetail extends Component {
           </Row>
         </CardBody>
         <CardBody>
-          <div className='rounded-circle text-center'>
+          <div className='rounded-circle text-center mr-3 unavailable-rocket'>
+            <img src='../../static/images/atlas-rocket.png' className='rocket-render p-2' alt='Rocket render' />
+          </div>
+          <div className='rounded-circle text-center selected-rocket mr-3'>
             <img src='../../static/images/falcon-heavy-render.png' className='rocket-render p-2' alt='Rocket render' />
+          </div>
+          <div className='rounded-circle text-center mr-3'>
+            <img src='../../static/images/titan-rocket.png' className='rocket-render p-2' alt='Rocket render' />
+          </div>
+          <div className='rounded-circle text-center mr-3'>
+            <img src='../../static/images/delta-rocket.png' className='rocket-render p-2' alt='Rocket render' />
           </div>
         </CardBody>
         <CardBody>
@@ -81,15 +90,29 @@ export default class TransportDetail extends Component {
           .fa-star-half-alt {
             color: #FC5C65;
           }
+          .selected-rocket {
+            background: rgba(242, 130, 188, 0.5);
+          }
           .rounded-circle {
-            border: 1px solid #FC5C65;
-            background: rgba(252, 92, 101, 0.5);
+            border: 1px solid #f282bc;
             height: 100px;
             width: 100px;
+            display: inline-block;
+          }
+          .rounded-circle:hover {
+            background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
           }
           .rocket-render {
             height: 100px;
             transform: rotate(45deg);
+          }
+          .unavailable-rocket {
+            background: rgba(50, 50, 50, 1);
+            opacity: 0.5;
+          }
+          .unavailable-rocket:hover {
+            background: rgba(50, 50, 50, 1);
+            opacity: 0.5;
           }
         `}</style>
       </Card>
