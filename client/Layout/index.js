@@ -28,7 +28,7 @@ class Layout extends Component {
           }
           .reservation-bg {
             background: rgba(9, 9, 9, 0.8);
-            min-height: 100vh;
+            height: 100%;
           }
         `}</style>
       </div>

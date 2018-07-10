@@ -33,8 +33,8 @@ export default class Resort extends Component {
 
   render () {
     return (
-      <div>
-        <SpaceScreen />
+      <div className='reservation-bg'>
+        {/* <SpaceScreen /> */}
         <Logo />
         <ResortNav />
         <ProgressBar progressValue='40' />
