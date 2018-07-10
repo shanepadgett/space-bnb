@@ -32,7 +32,7 @@ export default class TransportDetail extends Component {
             </CardText>
           </Card>
         </CardBody>
-        <CardBody className='pb-0'>
+        <CardBody>
           <Row >
             <Col xs='6'>
               <i className='fas fa-star mr-1' />
@@ -55,7 +55,7 @@ export default class TransportDetail extends Component {
            
           }
           .scroll-card {
-            height: 220px;
+            height: 20vw;
             overflow: scroll;
             border: none !important;
           }

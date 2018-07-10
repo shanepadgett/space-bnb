@@ -54,7 +54,7 @@ export default class transport extends Component {
             padding: 0; 
           }
           .scroll-card {
-            height: 260px;
+            height: 220px;
             overflow: scroll;
             border: none !important;
           }
