@@ -17,13 +17,20 @@ class Index extends Component {
     this.toggle = this.toggle.bind(this)
     this.state = {
       dropdownOpen: false,
-      selection: 'Earth',
+      selection: '',
       showMenu: false
     }
   }
 
   componentDidMount () {
-    EventBus.publish(events.selectPlanet, 'earth')
+    console.log(this.state.selection)
+    if (this.state.selection !== 'earth') {
+      EventBus.publish(events.selectPlanet, 'earth')
+      this.setState({
+        selection: 'earth',
+        showMenu: false
+      })
+    }
   }
 
   toggle () {

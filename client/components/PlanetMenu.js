@@ -12,8 +12,6 @@ import {
   Button,
   Table
 } from 'reactstrap'
-import EventBus from 'eventing-bus'
-import events from '../lib/constants/eventConstants'
 import Planets from '../lib/threeJS/sceneSubjects/planetConfig'
 
 export default class PlanetMenu extends Component {
@@ -41,7 +39,7 @@ export default class PlanetMenu extends Component {
             </Table>
           </CardText>
           <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
-            <Button className='btn btn-outline-danger' onClick={this.onChoosePlanetHandler.bind(this, this.props.selection)}>
+            <Button className='btn btn-outline-danger'>
               <i className='fas fa-angle-right' />
               Visit {this.props.selection}
               <i className='fas fa-angle-left' />
@@ -50,10 +48,6 @@ export default class PlanetMenu extends Component {
         </CardBody>
       </Card>
     )
-  }
-
-  onChoosePlanetHandler (planetName) {
-    EventBus.publish(events.choosePlanet, planetName)
   }
 
   render () {
