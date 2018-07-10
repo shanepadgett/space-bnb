@@ -30,6 +30,15 @@ class Layout extends Component {
             background: rgba(9, 9, 9, 0.8);
             height: 100%;
           }
+          .fixed-to-bg {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -9995;
+          }
         `}</style>
       </div>
     )
