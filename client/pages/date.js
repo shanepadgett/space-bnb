@@ -1,12 +1,12 @@
 import { Component } from 'react'
-import SpaceScreen from '../components/SpaceScreen'
-import DateWrapper from '../components/SelectDates/DateWrapper'
+import SpaceScreen from '../components/Global/SpaceScreen'
+import DateWrapper from '../components/Date/DateWrapper'
 import ProgressBar from '../components/ProgressBar'
-import DateNav from '../components/SelectDates/DateNav'
+import DateNav from '../components/Date/DateNav'
 import moment from 'moment'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
-import Link from 'next/link'
+import Logo from '../components/Global/Logo'
 
 export default class About extends Component {
   constructor (props) {
@@ -43,9 +43,7 @@ export default class About extends Component {
   render () {
     return (
       <div>
-        <Link href='/'>
-          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
-        </Link>
+        <Logo />
         <SpaceScreen />
         <DateNav
           dates={{
@@ -63,10 +61,6 @@ export default class About extends Component {
           endDate={this.state.endDate}
         />
         <style global jsx>{`
-          .logo-img {
-            position: absolute;
-            height: 52px;
-          }
         `}</style>
       </div>
     )

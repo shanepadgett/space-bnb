@@ -6,10 +6,10 @@ import {
   DropdownItem
 } from 'reactstrap'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
-import PlanetMenu from '../components/PlanetMenu'
+import PlanetMenu from '../components/Planet/PlanetMenu'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
-import Link from 'next/link'
+import Logo from '../components/Global/Logo'
 
 class Index extends Component {
   constructor (props) {
@@ -53,9 +53,7 @@ class Index extends Component {
   render () {
     return (
       <div>
-        <Link href='/'>
-          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
-        </Link>
+        <Logo />
         <PlanetMenu selection={this.state.selection} showMenu={this.state.showMenu} />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -81,10 +79,6 @@ class Index extends Component {
           </ButtonDropdown>
         </div>
         <style global jsx>{`
-          .logo-img {
-            position: absolute;
-            height: 52px;
-          }
           .dropdown-wrapper {
             text-align: center;
             position: absolute; 

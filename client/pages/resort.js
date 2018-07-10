@@ -4,7 +4,8 @@ import ProgressBar from '../components/ProgressBar'
 import ResortNav from '../components/Resort/ResortNav'
 import axios from 'axios'
 import { Container, Row, Jumbotron } from 'reactstrap'
-import Link from 'next/link'
+import Logo from '../components/Global/Logo'
+import SpaceScreen from '../components/Global/SpaceScreen'
 
 const imgArr = [
   'https://cnet4.cbsistatic.com/img/Y62BsY2G9ZDzsjs3vxWC-8-8_jY=/970x0/2017/09/29/b0b65195-ec68-4394-922b-a7c3611d2e22/elon-musk-mars-colony.jpg',
@@ -32,10 +33,9 @@ export default class Resort extends Component {
 
   render () {
     return (
-      <div className='reservation-bg'>
-        <Link href='/'>
-          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
-        </Link>
+      <div>
+        <SpaceScreen />
+        <Logo />
         <ResortNav />
         <ProgressBar progressValue='40' />
         <Jumbotron className='pt-4'>
@@ -43,15 +43,11 @@ export default class Resort extends Component {
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Select your resort:</p>
             <Row>
-              {this.props.resorts.map(resort => <ResortCard resort={resort} />)}
+              {this.props.resorts.map(resort => <ResortCard key={resort.name} resort={resort} />)}
             </Row>
           </Container>
         </Jumbotron>
         <style global jsx>{`
-          .logo-img {
-            position: absolute;
-            height: 52px;
-          }
           .btn-outline-danger {
               border: 1px solid #FC5C65 !important;
               color: #FC5C65 !important;

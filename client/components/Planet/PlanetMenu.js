@@ -5,14 +5,13 @@ import {
   Row,
   Col,
   Card,
-  CardText,
   CardBody,
   CardTitle,
   CardSubtitle,
   Button,
   Table
 } from 'reactstrap'
-import Planets from '../lib/threeJS/sceneSubjects/planetConfig'
+import Planets from '../../lib/threeJS/sceneSubjects/planetConfig'
 
 export default class PlanetMenu extends Component {
   createMenu (planet) {
@@ -24,7 +23,7 @@ export default class PlanetMenu extends Component {
         <CardBody>
           <CardTitle>{this.props.selection}</CardTitle>
           <CardSubtitle>Information</CardSubtitle>
-          <CardText className='mt-3'>
+          <div className='mt-3'>
             <Table>
               <tbody>
                 {Object.keys(Planets[this.props.selection].quickFacts).map(key => {
@@ -37,8 +36,8 @@ export default class PlanetMenu extends Component {
                 })}
               </tbody>
             </Table>
-          </CardText>
-          <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
+          </div>
+          <Link href={{ pathname: '/date', query: { name: this.props.selection } }} >
             <Button className='btn btn-outline-danger'>
               <i className='fas fa-angle-right' />
               Visit {this.props.selection}
