@@ -21,7 +21,7 @@ const ResortCard = ({ resort }) => (
         top
         width='100%'
         height='200px'
-        src={resort.images[Math.floor(Math.random() * resort.images.length)]}
+        src={resort.images[0]}
         alt='Card image cap'
         className='resort-img'
       />

@@ -11,8 +11,22 @@ class ResortDetail extends Component {
 
   render () {
     return (
-      <div>
-        <h1>{this.props.resort.name}</h1>
+      <div className='reservation-bg fixed-to-bg'>
+        <img src={this.props.resort.images[0]} className='fixed-to-bg' />
+        <h1 className='text-light'>{this.props.resort.name}</h1>
+
+        <style jsx>{`
+          img {
+            opacity: 0.2;
+            filter: blur(10px);
+            transform: scale(1.1);
+          }          
+        `}</style>
+        <style global jsx>{`
+          .reservation-bg {
+            background: rgba(0, 0, 0, 1);
+          }          
+        `}</style>
       </div>
     )
   }
