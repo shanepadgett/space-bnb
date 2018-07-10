@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Rocket = new Schema({
+const RocketSchema = new Schema({
   model: {
     type: String,
     required: true
@@ -30,4 +30,6 @@ const Rocket = new Schema({
   }]
 })
 
-export default mongoose.model('Rocket', Rocket)
+const Rocket = mongoose.model('Rocket', RocketSchema)
+
+export default Rocket

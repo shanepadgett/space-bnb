@@ -1,8 +1,8 @@
-export { default as Planet } from './planet'
-export { default as Resort } from './resort'
-export { default as Review } from './review'
-export { default as Rocket } from './rocket'
-export { default as Suit } from './suit'
-export { default as User } from './user'
+import Planet from './planet'
+import Resort from './resort'
+import Review from './review'
+import Rocket from './rocket'
+import Suit from './suit'
+import User from './user'
 
-export default null
+export { Planet, Resort, Review, Rocket, Suit, User }

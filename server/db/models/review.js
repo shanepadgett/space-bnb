@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Review = new Schema({
+const ReviewSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -17,4 +17,6 @@ const Review = new Schema({
   }
 })
 
-export default mongoose.model('Review', Review)
+const Review = mongoose.model('Review', ReviewSchema)
+
+export default Review

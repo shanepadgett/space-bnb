@@ -13,8 +13,8 @@ const imgArr = [
 ]
 
 export default class Resort extends Component {
-  static async getInitialProps () {
-    const resortsRes = await axios.get('/api/resorts')
+  static async getInitialProps ({ query }) {
+    const resortsRes = await axios.get(`/api/resorts/${query.name}`)
     const resorts = resortsRes.data
     resorts.forEach(resort => {
       resort.images = imgArr
@@ -27,25 +27,25 @@ export default class Resort extends Component {
       <div className='reservation-bg'>
         <NavButtons />
         <ProgressBar />
-        <h1 className='text-center display-4 m-2 text-secondary'>Select Resort</h1>
-        <Row>
-          <Col xs={{size: 2, offset: 5}}>
-            <hr className='bg-dark' />
-          </Col>
-        </Row>
-        <div className='resort-wrapper'>
-          <Container>
-            <Row>
-              { this.props.resorts.map(resort => <ResortCard resort={resort} />) }
-            </Row>
-          </Container>
-        </div>
+        <Container>
+          <h1 className='text-center display-4 mt-2 mb-0 text-secondary'>
+            Select Resort
+          </h1>
+          <Row>
+            <Col xs={{ size: 2, offset: 5 }}>
+              <hr className='bg-secondary mt-2 mb-4' />
+            </Col>
+          </Row>
+          <Row>
+            {this.props.resorts.map(resort => <ResortCard resort={resort} />)}
+          </Row>
+        </Container>
 
-        <style jsx>{`
+        {/* <style jsx>{`
           .resort-wrapper {
             margin-top: 20px;
           }
-        `}</style>
+        `}</style> */}
       </div>
     )
   }

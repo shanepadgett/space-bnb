@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const Suit = new Schema({
+const SuitSchema = new Schema({
   model: {
     type: String,
     required: true
@@ -30,4 +30,6 @@ const Suit = new Schema({
   }]
 })
 
-export default mongoose.model('Suit', Suit)
+const Suit = mongoose.model('Suit', SuitSchema)
+
+export default Suit
