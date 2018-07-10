@@ -24,10 +24,10 @@ export default class transport extends Component {
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Available transport:</p>
             <Row>
-              <Col sm='6'>
+              <Col md='5' lg='3' className='mb-3'>
                 <TransportModel />
               </Col>
-              <Col sm='6'>
+              <Col md='7' lg='9'>
                 <TransportDetail />
               </Col>
             </Row>
@@ -52,11 +52,6 @@ export default class transport extends Component {
             border-top: 1px solid #fff !important;
             margin: 1em 0;
             padding: 0; 
-          }
-          .scroll-card {
-            height: 220px;
-            overflow: scroll;
-            border: none !important;
           }
         `}</style>
       </div>
