@@ -5,10 +5,10 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap'
-import EventBus from 'eventing-bus'
-import events from '../lib/constants/eventConstants'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
 import PlanetMenu from '../components/PlanetMenu'
+import EventBus from 'eventing-bus'
+import events from '../lib/constants/eventConstants'
 
 class Index extends Component {
   constructor (props) {
@@ -20,6 +20,10 @@ class Index extends Component {
       selection: 'Earth',
       showMenu: false
     }
+  }
+
+  componentDidMount () {
+    EventBus.publish(events.selectPlanet, 'earth')
   }
 
   toggle () {

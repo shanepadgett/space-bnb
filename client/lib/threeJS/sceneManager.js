@@ -56,7 +56,7 @@ export default canvas => {
   function buildCamera ({ width, height }) {
     const aspectRatio = width / height
     const fieldOfView = 60
-    const nearPlane = 1
+    const nearPlane = 0.1
     const farPlane = 1000
     const camera = new THREE.PerspectiveCamera(
       fieldOfView,
@@ -114,6 +114,16 @@ export default canvas => {
     moveCameraToTarget(target)
   }
 
+  function onPlanetChosen (planetName) {
+    const target = {
+      x: planetConfig[planetName].transform.position.px + 0.9,
+      y: planetConfig[planetName].transform.position.py - 0.8,
+      z: planetConfig[planetName].transform.position.pz + 1
+    }
+
+    moveCameraToTarget(target)
+  }
+
   function moveCameraToTarget (target, delayInSeconds = 0) {
     delayInSeconds *= 1000
     setTimeout(() => {
@@ -136,6 +146,7 @@ export default canvas => {
   }
 
   EventBus.on(events.selectPlanet, onPlanetSelected)
+  EventBus.on(events.choosePlanet, onPlanetChosen)
 
   return {
     update,

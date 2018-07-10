@@ -11,6 +11,8 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap'
+import EventBus from 'eventing-bus'
+import events from '../lib/constants/eventConstants'
 
 export default class PlanetMenu extends Component {
   createMenu (planet) {
@@ -34,7 +36,7 @@ export default class PlanetMenu extends Component {
             Surface area‎: ‎4.6023×108 km2 <br />
           </CardText>
           <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
-            <Button className='btn btn-outline-danger'>
+            <Button className='btn btn-outline-danger' onClick={this.onChoosePlanetHandler.bind(this, this.props.selection)}>
               <i className='fas fa-angle-right' />
               Visit {this.props.selection}
               <i className='fas fa-angle-left' />
@@ -43,6 +45,10 @@ export default class PlanetMenu extends Component {
         </CardBody>
       </Card>
     )
+  }
+
+  onChoosePlanetHandler (planetName) {
+    EventBus.publish(events.choosePlanet, planetName)
   }
 
   render () {

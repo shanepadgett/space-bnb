@@ -6,12 +6,15 @@ export default class SpaceScreen extends Component {
       <div>
         <div className='space-screen' />
         <style global jsx>{` 
-              .space-screen {
-                position: absolute;
-                z-index: -9998;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.6);
+            .space-screen {
+              width: 100vw;
+              height: 100%;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -9995;
+              background-color: rgba(9, 9, 9, 0.8);
               }
         `}</style>
       </div>

@@ -1,3 +1,4 @@
 export default {
-  selectPlanet: 'selectPlanet'
+  selectPlanet: 'selectPlanet',
+  choosePlanet: 'choosePlanet'
 }
