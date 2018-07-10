@@ -22,7 +22,7 @@ export default class Resort extends Component {
         <Jumbotron className='pt-4'>
           <Container>
             <h1 className='display-4'>{this.props.query.name}</h1>
-            <p className='lead'>Available transport:</p>
+            <p className='lead'>Available spacesuit:</p>
             <Row>
               <Col sm='6'>
                 <SuitModel />
