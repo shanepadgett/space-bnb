@@ -27,7 +27,7 @@ export default class About extends Component {
     this.setState({
       endDate: date
     })
-    console.log(this.state)
+    console.log(this.state.startDate.format('MM-DD-YYYY'), this.state.endDate.format('MM-DD-YYYY'))
   }
   static async getInitialProps ({ query }) {
     return { query }
@@ -37,7 +37,7 @@ export default class About extends Component {
     return (
       <div>
         <SpaceScreen />
-        <NavButtons />
+        <NavButtons dates={{start: this.state.startDate.format('MM-DD-YYYY'), end: this.state.endDate.format('MM-DD-YYYY')}} />
         <ProgressBar />
         <DateWrapper selection={this.props.query.name} setEndDate={this.setEndDate} setStartDate={this.setStartDate} startDate={this.state.startDate} endDate={this.state.endDate} />
       </div>

@@ -1,31 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import DatePicker from 'react-datepicker'
-import moment from 'moment'
 
 export default class DateSelector extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      startDate: moment(),
-      endDate: moment()
-    }
-    this.setStartDate = this.setStartDate.bind(this)
-    this.setEndDate = this.setEndDate.bind(this)
-  }
-
-  setStartDate (date) {
-    this.setState({
-      startDate: date
-    })
-  }
-
-  setEndDate (date) {
-    this.setState({
-      endDate: date
-    })
-  }
-
   render () {
     return (
       <Container className='text-center'>

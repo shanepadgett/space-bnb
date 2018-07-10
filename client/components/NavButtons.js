@@ -12,7 +12,7 @@ export default class NavButtons extends Component {
               <Link href='/'>
                 <Button color='btn btn-outline-secondary m-3'>Home</Button>
               </Link>
-              <Link href='#'>
+              <Link href={{ pathname: '/about', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary'>Next</Button>
               </Link>
             </Col>

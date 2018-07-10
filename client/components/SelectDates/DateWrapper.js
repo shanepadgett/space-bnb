@@ -2,32 +2,8 @@ import React, { Component } from 'react'
 import { Jumbotron, Container } from 'reactstrap'
 import DateSelector from './DateSelector'
 import Planets from '../../lib/threeJS/sceneSubjects/planetConfig'
-import moment from 'moment'
 
 export default class DateWrapper extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      startDate: moment(),
-      endDate: moment()
-    }
-    this.setStartDate = this.setStartDate.bind(this)
-    this.setEndDate = this.setEndDate.bind(this)
-  }
-
-  setStartDate (date) {
-    this.setState({
-      startDate: date
-    })
-  }
-
-  setEndDate (date) {
-    this.setState({
-      endDate: date
-    })
-  }
-
   render () {
     return (
       <div>
