@@ -13,7 +13,10 @@ import {
 
 dotenv.config()
 
-mongoose.connect(process.env.MONGODB_URI_DEV, err => {
+const dev = process.env.NODE_ENV !== 'production'
+const dbUrl = dev ? process.env.MONGODB_URI_DEV : process.env.MONGODB_URI_PROD
+
+mongoose.connect(dbUrl, err => {
   if (err) throw err
   console.log('DB open')
 })

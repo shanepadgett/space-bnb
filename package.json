@@ -7,7 +7,8 @@
     "build": "next build client",
     "start": "NODE_ENV=production babel-node server --presets env,stage-0",
     "precommit": "lint-staged",
-    "seed": "\"babel-node server/db/seed.js --presets env,stage-0\"",
+    "seedDev": "\"babel-node server/db/seed.js --presets env,stage-0\"",
+    "seedProd": "cross-env NODE_ENV=production \"babel-node server/db/seed.js --presets env,stage-0\"",
     "removeDeployments": "now rm space-bnb --yes",
     "deploy": "now && now alias"
   },
@@ -31,6 +32,7 @@
   },
   "homepage": "https://github.com/Philosec/space-bnb#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "faker": "^4.1.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.6",
