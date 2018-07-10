@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   Row
 } from 'reactstrap'
+import Link from 'next/link'
 
 const ResortCard = ({ resort }) => (
   <Col sm='4' className='mb-5'>
@@ -28,7 +29,11 @@ const ResortCard = ({ resort }) => (
             </Button>
           </Col>
           <Col xs='6'>
-            <Button outline block color='danger' className='p-1'>Select</Button>
+            <Link href='/transport'>
+              <Button outline block color='danger' className='p-1'>
+                Select
+              </Button>
+            </Link>
           </Col>
         </Row>
         <CardTitle className='mt-3 ellipsis'>{resort.name}</CardTitle>

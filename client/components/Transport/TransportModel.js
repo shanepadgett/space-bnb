@@ -12,18 +12,25 @@ export default class TransportModel extends Component {
 
   render () {
     return (
-      <Card className='text-center p-3'>
-        <iframe height='500' src='https://sketchfab.com/models/923f88f17f6049af960837fe422ecb70/embed?autostart=1' frameborder='0' allow='autoplay; fullscreen; vr' mozallowfullscreen='true' webkitallowfullscreen='true' />
+      <Card className='text-center p-3 black'>
+        <iframe
+          height='800'
+          src='https://sketchfab.com/models/9ecae8b924524e5ba695abee299992d8/embed?autostart=1&autospin=0.5&camera=0&ui_stop=0&ui_annotations=0&ui_controls=0&transparent=1&ui_infos=0&ui_inspector=0'
+          frameborder='0'
+          allow='autoplay; fullscreen; vr'
+          mozallowfullscreen='true'
+          webkitallowfullscreen='true'
+        />
+
+        <style global jsx>{`
+          .black {
+            background: black !important;
+          }
+          .reservation-bg {
+            background: rgba(9, 9, 9, 1) !important;
+          }
+        `}</style>
       </Card>
     )
   }
 }
-
-//   <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/923f88f17f6049af960837fe422ecb70/embed?autostart=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-// <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-//     <a href="https://sketchfab.com/models/923f88f17f6049af960837fe422ecb70?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">SpaceX Falcon Heavy</a>
-//     by <a href="https://sketchfab.com/jonlundy3d?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">JonLundy3D</a>
-//     on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-// </p>
-// </div>
