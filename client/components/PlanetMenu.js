@@ -9,10 +9,12 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
+  Button,
+  Table
 } from 'reactstrap'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
+import Planets from '../lib/threeJS/sceneSubjects/planetConfig'
 
 export default class PlanetMenu extends Component {
   createMenu (planet) {
@@ -24,16 +26,19 @@ export default class PlanetMenu extends Component {
         <CardBody>
           <CardTitle>{this.props.selection}</CardTitle>
           <CardSubtitle>Information</CardSubtitle>
-          <CardText>
-            {' '}<br />
-            Distance from Sun: 67.24 million mi <br />
-            Radius: 3,760 mi <br />
-            Orbital period: 225 days <br />
-            Mass: 4.867 × 10^24 kg (0.815 M⊕) <br />
-            Equatorial rotation velocity: 6.52 km/h (1.81 m/s) <br />
-            Average orbital speed‎: ‎35.02 km/s <br />
-            Surface gravity‎: ‎8.87 m/s2; 0.904 g <br />
-            Surface area‎: ‎4.6023×108 km2 <br />
+          <CardText className='mt-3'>
+            <Table>
+              <tbody>
+                {Object.keys(Planets[this.props.selection].quickFacts).map(key => {
+                  return (
+                    <tr key={key}>
+                      <th>{key}</th>
+                      <td className='text-right'>{Planets[this.props.selection].quickFacts[key]}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </Table>
           </CardText>
           <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
             <Button className='btn btn-outline-danger' onClick={this.onChoosePlanetHandler.bind(this, this.props.selection)}>
@@ -55,11 +60,15 @@ export default class PlanetMenu extends Component {
     return (
       <Container className='menu-wrapper'>
         <Row>
-          <Col md={{ size: 6, offset: 6 }}>
+          <Col md={{ size: 6, offset: 6 }} sm={{ size: 8, offset: 4 }}>
             {this.createMenu(this.props.selection)}
           </Col>
         </Row>
         <style global jsx>{`
+          th,
+          td {
+            padding: 0 !important;
+          }
           .menu-wrapper {
             position: absolute; 
             width: 100%;
