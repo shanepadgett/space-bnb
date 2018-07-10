@@ -53,6 +53,11 @@ export default class transport extends Component {
             margin: 1em 0;
             padding: 0; 
           }
+          .scroll-card {
+            height: 260px;
+            overflow: scroll;
+            border: none !important;
+          }
         `}</style>
       </div>
     )
