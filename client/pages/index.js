@@ -9,6 +9,7 @@ import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
 import PlanetMenu from '../components/PlanetMenu'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
+import Link from 'next/link'
 
 class Index extends Component {
   constructor (props) {
@@ -52,7 +53,9 @@ class Index extends Component {
   render () {
     return (
       <div>
-        <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
+        <Link href='/'>
+          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
+        </Link>
         <PlanetMenu selection={this.state.selection} showMenu={this.state.showMenu} />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>

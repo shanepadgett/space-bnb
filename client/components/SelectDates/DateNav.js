@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import { Container, Row, Col, Button } from 'reactstrap'
 
-export default class NavButtons extends Component {
+export default class DateNav extends Component {
   render () {
     return (
       <div className='home-btn-wrapper'>

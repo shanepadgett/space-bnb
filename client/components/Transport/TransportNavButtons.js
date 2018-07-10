@@ -9,10 +9,10 @@ export default class TransportNavbuttons extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href='/'>
+              <Link href={{ pathname: '/resort', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
-              <Link href={{ pathname: '/resort', query: this.props.dates }}>
+              <Link href={{ pathname: '/suit', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary'><i className='fas fa-arrow-right' /></Button>
               </Link>
             </Col>

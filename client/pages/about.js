@@ -2,10 +2,11 @@ import { Component } from 'react'
 import SpaceScreen from '../components/SpaceScreen'
 import DateWrapper from '../components/SelectDates/DateWrapper'
 import ProgressBar from '../components/ProgressBar'
-import NavButtons from '../components/NavButtons'
+import DateNav from '../components/SelectDates/DateNav'
 import moment from 'moment'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
+import Link from 'next/link'
 
 export default class About extends Component {
   constructor (props) {
@@ -37,18 +38,16 @@ export default class About extends Component {
     this.setState({
       endDate: date
     })
-    console.log(
-      this.state.startDate.format('MM-DD-YYYY'),
-      this.state.endDate.format('MM-DD-YYYY')
-    )
   }
 
   render () {
     return (
       <div>
-        <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
+        <Link href='/'>
+          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
+        </Link>
         <SpaceScreen />
-        <NavButtons
+        <DateNav
           dates={{
             name: this.props.query.name,
             start: this.state.startDate.format('MM-DD-YYYY'),

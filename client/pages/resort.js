@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import ResortCard from '../components/ResortCard'
 import ProgressBar from '../components/ProgressBar'
-import NavButtons from '../components/NavButtons'
+import ResortNav from '../components/Resort/ResortNav'
 import axios from 'axios'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Jumbotron } from 'reactstrap'
+import Link from 'next/link'
 
 const imgArr = [
   'https://cnet4.cbsistatic.com/img/Y62BsY2G9ZDzsjs3vxWC-8-8_jY=/970x0/2017/09/29/b0b65195-ec68-4394-922b-a7c3611d2e22/elon-musk-mars-colony.jpg',
@@ -13,34 +14,44 @@ const imgArr = [
 ]
 
 export default class Resort extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      selection: null
+    }
+  }
   static async getInitialProps ({ query }) {
     const resortsRes = await axios.get(`/api/resorts/${query.name}`)
     const resorts = resortsRes.data
     resorts.forEach(resort => {
       resort.images = imgArr
     })
-    return { resorts }
+    return { query, resorts }
   }
 
   render () {
     return (
       <div className='reservation-bg'>
-        <NavButtons />
+        <Link href='/'>
+          <img src='../static/images/rocket-icon.svg' className='m-3 logo-img' />
+        </Link>
+        <ResortNav />
         <ProgressBar progressValue='40' />
-        <Container>
-          <h1 className='text-center display-4 mt-2 mb-0 text-secondary'>
-            Select Resort
-          </h1>
-          <Row>
-            <Col xs={{ size: 2, offset: 5 }}>
-              <hr className='bg-secondary mt-2 mb-4' />
-            </Col>
-          </Row>
-          <Row>
-            {this.props.resorts.map(resort => <ResortCard resort={resort} />)}
-          </Row>
-        </Container>
+        <Jumbotron className='pt-4'>
+          <Container>
+            <h1 className='display-4'>{this.props.query.name}</h1>
+            <p className='lead'>Select your resort:</p>
+            <Row>
+              {this.props.resorts.map(resort => <ResortCard resort={resort} />)}
+            </Row>
+          </Container>
+        </Jumbotron>
         <style global jsx>{`
+          .logo-img {
+            position: absolute;
+            height: 52px;
+          }
           .btn-outline-danger {
               border: 1px solid #FC5C65 !important;
               color: #FC5C65 !important;
@@ -51,6 +62,21 @@ export default class Resort extends Component {
               background: #FC5C65 !important;
               border: 1px solid #FC5C65 !important;
             }
+            .jumbotron {
+              background: transparent !important;
+            }
+            .display-4,
+            .planet-nickname {
+              color: #fff;
+            }
+            hr {
+              display: block;
+              height: 1px;
+              border: 0;
+              border-top: 1px solid #fff !important;
+              margin: 1em 0;
+              padding: 0; 
+          }
         `}</style>
         {/* <style jsx>{`
           .resort-wrapper {
