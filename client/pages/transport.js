@@ -36,6 +36,7 @@ export default class transport extends Component {
         <style global jsx>{`          
           .card {
             border: 1px solid #fff !important;
+            background: transparent !important;
           }
           .jumbotron {
             background: transparent !important;
