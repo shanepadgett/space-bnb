@@ -9,7 +9,7 @@ export default {
       height: '58.3m',
       width: '3.81m',
       mass: '334,500kg',
-      payloadToLEO: '20,520kg'
+      payload_To_LEO: '20,520kg'
     },
     description: 'The Atlas V was developed by Lockheed Martin Commercial Launch Services as part of the US Air Force Evolved Expendable Launch Vehicle (EELV) program and made its inaugural flight on August 21, 2002. The vehicle operates out of Space Launch Complex 41 at Cape Canaveral Air Force Station and Space Launch Complex 3-E at Vandenberg Air Force Base.'
   },
@@ -23,7 +23,7 @@ export default {
       height: '70m',
       width: '12.2m',
       mass: '1,420,788kg',
-      payloadToLEO: '63,800kg'
+      payload_To_LEO: '63,800kg'
     },
     description: 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)---a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.'
   },
@@ -37,7 +37,7 @@ export default {
       height: '62m',
       width: '3.05m',
       mass: '943,050kg',
-      payloadToLEO: '21,680kg'
+      payload_To_LEO: '21,680kg'
     },
     description: `This rocket was used almost exclusively to launch American military or civilian intelligence agency payloads. However, it was also used for a purely scientific purpose to launch the NASA–ESA Cassini / Huygens space probe to Saturn in 1997. The primary intelligence agency that needed the Titan IV's launch capabilities was the National Reconnaissance Office (NRO).`
   },
@@ -51,7 +51,7 @@ export default {
       height: '38.2m',
       width: '2.44m',
       mass: '231,870kg',
-      payloadToLEO: '6,100kg'
+      payload_To_LEO: '6,100kg'
     },
     description: 'Delta II is an expendable launch system, originally designed and built by McDonnell Douglas. Delta II is part of the Delta rocket family and entered service in 1989. In 2018, the rocket is scheduled to fly its final mission, ICESat-2, which will earn the launch vehicle a streak of 100 successful missions in a row if successful.'
   }

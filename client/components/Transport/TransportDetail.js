@@ -51,7 +51,7 @@ export default class TransportDetail extends Component {
                   {Object.keys(this.props.rocket.quickFacts).map(key => {
                     return (
                       <tr key={key}>
-                        <th>{key}</th>
+                        <th>{key.replace(/_/g, ' ')}</th>
                         <td className='text-right'>{this.props.rocket.quickFacts[key]}</td>
                       </tr>
                     )

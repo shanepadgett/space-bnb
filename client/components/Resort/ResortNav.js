@@ -12,9 +12,9 @@ export default class ResortNav extends Component {
               <Link href={{ pathname: '/date', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
-              <Link href={{ pathname: '/transport', query: this.props.dates }}>
+              {/* <Link href={{ pathname: '/transport', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary'><i className='fas fa-arrow-right' /></Button>
-              </Link>
+              </Link> */}
             </Col>
           </Row>
         </Container>
