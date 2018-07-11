@@ -1,24 +1,20 @@
 import React, { Component } from 'react'
 import { Card, CardText, CardBody,
-  CardTitle, Button, Row, Col, Table } from 'reactstrap'
+  CardTitle, Row, Col, Table } from 'reactstrap'
+
+const addCommas = x => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
 
 export default class TransportDetail extends Component {
   render () {
     return (
-      <Card className='p-3'>
-        <CardBody className='pb-3'>
-          {/* <Row className='mb-3'>
-            <Col xs='6'>
-              <Button color='btn btn-outline-secondary'><i className='fas fa-arrow-left' /></Button>
-            </Col>
-            <Col xs='6' className='text-right'>
-              <Button color='btn btn-outline-secondary'><i className='fas fa-arrow-right' /></Button>
-            </Col>
-          </Row> */}
+      <Card>
+        <CardBody className='pb-3 pt-0'>
           <Row>
             {Object.keys(this.props.rocketConfig).map(key => {
               return (
-                <Col lg='3' xs='6' className='text-center mb-3'>
+                <Col xs='3' className='text-center mb-5'>
                   <div className='rounded-circle text-center' key={key} onClick={this.props.changeRocket.bind(this, key)}>
                     <img src={this.props.rocketConfig[key].img} className='rocket-render p-2' alt='Rocket render' />
                   </div>
@@ -28,7 +24,7 @@ export default class TransportDetail extends Component {
           </Row>
           <Row>
             <Col lg='6'>
-              <h1>{this.props.rocket.name}</h1>
+              <h2>{this.props.rocket.name}</h2>
             </Col>
             <Col lg='3' md='6'>
               <i className='fas fa-star mr-1' />
@@ -38,7 +34,7 @@ export default class TransportDetail extends Component {
               <i className='far fa-star' />
             </Col>
             <Col lg='3' md='6' className='text-right'>
-              <h4 className='text-success'>{`$ 10,850`}</h4>
+              <h4 className='text-success'>{`$ ${addCommas(this.props.rocket.price)}`}</h4>
             </Col>
           </Row>
           <Row>
@@ -70,7 +66,7 @@ export default class TransportDetail extends Component {
           td {
             padding: 0 !important;
           }
-          h1 {
+          h2 {
             color: #fff !important;
           }
           .fa-star,
@@ -78,7 +74,7 @@ export default class TransportDetail extends Component {
             color: #FC5C65;
           }
           .selected-rocket {
-            background: rgba(242, 130, 188, 0.5);
+            background: rgba(242, 130, 188, 0.5) !important;
           }
           .rounded-circle {
             border: 1px solid #f282bc;
@@ -93,13 +89,23 @@ export default class TransportDetail extends Component {
             height: 100px;
             transform: rotate(45deg);
           }
-          .unavailable-rocket {
-            background: rgba(50, 50, 50, 1);
-            opacity: 0.5;
+          @media (max-width: 991px) {
+            .rounded-circle {
+              height: 80px;
+              width: 80px;
+            }
+            .rocket-render {
+              height: 80px;
+            }
           }
-          .unavailable-rocket:hover {
-            background: rgba(50, 50, 50, 1);
-            opacity: 0.5;
+          @media (max-width: 520px) {
+            .rounded-circle {
+              height: 60px;
+              width: 60px;
+            }
+            .rocket-render {
+              height: 60px;
+            }
           }
         `}</style>
       </Card>

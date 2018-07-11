@@ -40,10 +40,10 @@ export default class transport extends Component {
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Available transport:</p>
             <Row>
-              <Col md='5' lg='3' className='mb-3'>
+              <Col md='5' lg='4' className='mb-3'>
                 <TransportModel model={rocketConfig[this.state.rocket].model} />
               </Col>
-              <Col md='7' lg='9'>
+              <Col md='7' lg='8'>
                 <TransportDetail rocket={rocketConfig[this.state.rocket]} rocketConfig={rocketConfig} changeRocket={this.changeRocket} />
               </Col>
             </Row>

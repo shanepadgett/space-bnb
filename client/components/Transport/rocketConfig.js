@@ -3,6 +3,8 @@ export default {
     name: 'Atlas V',
     img: '../../static/images/atlas-rocket.png',
     model: '91d20e0deeb74a56b7f8b3b3b0a38044',
+    price: '103248',
+    rating: 4,
     quickFacts: {
       height: '58.3m',
       width: '3.81m',
@@ -15,6 +17,8 @@ export default {
     name: 'Falcon Heavy',
     img: '../../static/images/falcon-heavy-render.png',
     model: '9ecae8b924524e5ba695abee299992d8',
+    price: '99345',
+    rating: 5,
     quickFacts: {
       height: '70m',
       width: '12.2m',
@@ -27,6 +31,8 @@ export default {
     name: 'Titan IV',
     img: '../../static/images/titan-rocket.png',
     model: '2c8cb51012e54453afa9d03a9630678c',
+    price: '32490',
+    rating: 3,
     quickFacts: {
       height: '62m',
       width: '3.05m',
@@ -39,6 +45,8 @@ export default {
     name: 'Delta II',
     img: '../../static/images/delta-rocket.png',
     model: 'fb4aa0410aa8426bbd0e221c2d3d5ccc',
+    price: '42380',
+    rating: 3,
     quickFacts: {
       height: '38.2m',
       width: '2.44m',
