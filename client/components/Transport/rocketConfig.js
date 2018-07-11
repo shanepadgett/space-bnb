@@ -3,8 +3,8 @@ export default {
     name: 'Atlas V',
     img: '../../static/images/atlas-rocket.png',
     model: '91d20e0deeb74a56b7f8b3b3b0a38044',
-    price: '103248',
-    rating: 4,
+    price: '73248',
+    rating: ['fas', 'fas', 'fas', 'fas', 'far'],
     quickFacts: {
       height: '58.3m',
       width: '3.81m',
@@ -18,7 +18,7 @@ export default {
     img: '../../static/images/falcon-heavy-render.png',
     model: '9ecae8b924524e5ba695abee299992d8',
     price: '99345',
-    rating: 5,
+    rating: ['fas', 'fas', 'fas', 'fas', 'fas'],
     quickFacts: {
       height: '70m',
       width: '12.2m',
@@ -32,7 +32,7 @@ export default {
     img: '../../static/images/titan-rocket.png',
     model: '2c8cb51012e54453afa9d03a9630678c',
     price: '32490',
-    rating: 3,
+    rating: ['fas', 'fas', 'far', 'far', 'far'],
     quickFacts: {
       height: '62m',
       width: '3.05m',
@@ -46,7 +46,7 @@ export default {
     img: '../../static/images/delta-rocket.png',
     model: 'fb4aa0410aa8426bbd0e221c2d3d5ccc',
     price: '42380',
-    rating: 3,
+    rating: ['fas', 'fas', 'fas', 'far', 'far'],
     quickFacts: {
       height: '38.2m',
       width: '2.44m',

@@ -15,9 +15,6 @@ export default class TransportModel extends Component {
         />
 
         <style global jsx>{`
-          .iframe-card {
-            border: 1px solid #aaa !important;
-          }
           .card {
             background: transparent !important;
           }

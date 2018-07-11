@@ -27,11 +27,11 @@ export default class TransportDetail extends Component {
               <h2>{this.props.rocket.name}</h2>
             </Col>
             <Col lg='3' md='6'>
-              <i className='fas fa-star mr-1' />
-              <i className='fas fa-star mr-1' />
-              <i className='fas fa-star mr-1' />
-              <i className='fas fa-star-half-alt mr-1' />
-              <i className='far fa-star' />
+              {this.props.rocket.rating.map(value => {
+                return (
+                  <i className={`${value} fa-star mr-1`} />
+                )
+              })}
             </Col>
             <Col lg='3' md='6' className='text-right'>
               <h4 className='text-success'>{`$ ${addCommas(this.props.rocket.price)}`}</h4>
