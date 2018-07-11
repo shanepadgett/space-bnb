@@ -37,7 +37,7 @@ export default class PlanetMenu extends Component {
               </tbody>
             </Table>
           </div>
-          <Link href={{ pathname: '/date', query: { name: this.props.selection } }} >
+          <Link href={{ pathname: '/about', query: { name: this.props.selection } }} >
             <Button className='btn btn-outline-danger'>
               <i className='fas fa-angle-right' />
               Visit {this.props.selection}
