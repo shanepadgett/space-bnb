@@ -6,17 +6,26 @@ import TransportDetail from '../components/Transport/TransportDetail'
 import { Container, Row, Col, Jumbotron } from 'reactstrap'
 import Logo from '../components/Global/Logo'
 import SpaceScreen from '../components/Global/SpaceScreen'
+import rocketConfig from '../components/Transport/rocketConfig'
 
 export default class transport extends Component {
   constructor (props) {
     super(props)
 
+    this.changeRocket = this.changeRocket.bind(this)
     this.state = {
-      rocket: 'FALCON-HEAVY'
+      rocket: 'falconHeavy'
     }
   }
   static async getInitialProps ({ query }) {
     return { query }
+  }
+
+  changeRocket (key) {
+    this.setState({
+      rocket: key
+    })
+    console.log(this.state)
   }
 
   render () {
@@ -32,17 +41,16 @@ export default class transport extends Component {
             <p className='lead'>Available transport:</p>
             <Row>
               <Col md='5' lg='3' className='mb-3'>
-                <TransportModel rocket={this.state.rocket} />
+                <TransportModel model={rocketConfig[this.state.rocket].model} />
               </Col>
               <Col md='7' lg='9'>
-                <TransportDetail rocket={this.state.rocket} />
+                <TransportDetail rocket={rocketConfig[this.state.rocket]} rocketConfig={rocketConfig} changeRocket={this.changeRocket} />
               </Col>
             </Row>
           </Container>
         </Jumbotron>
         <style global jsx>{`          
           .card {
-            border: 1px solid #fff !important;
             background: transparent !important;
           }
           .jumbotron {
