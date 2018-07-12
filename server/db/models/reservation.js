@@ -3,12 +3,17 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const ReservationSchema = new Schema({
-  date: {
+  departDate: {
     type: Date,
     required: true
   },
-  username: {
-    type: String,
+  returnDate: {
+    type: Date,
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   },
   planet: {
