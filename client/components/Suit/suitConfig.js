@@ -1,6 +1,6 @@
 export default {
-  emu: {
-    name: 'EMU',
+  extravehicularMobilityUnit: {
+    name: 'Extra-vehicular Mobility Unit',
     img: '../../static/images/emu.svg',
     model: '9ca3dc74a66847da981a5353f3e71a68',
     price: '84635',

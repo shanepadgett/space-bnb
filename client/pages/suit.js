@@ -14,7 +14,7 @@ export default class Resort extends Component {
 
     this.changeSuit = this.changeSuit.bind(this)
     this.state = {
-      suit: 'emu'
+      suit: 'extravehicularMobilityUnit'
     }
   }
   static async getInitialProps ({ query }) {
