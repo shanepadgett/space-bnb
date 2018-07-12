@@ -1,16 +1,58 @@
 export default {
-  atlas: {
+  emu: {
     name: 'Extravehicular Mobility Unit',
-    img: '../../static/images/atlas-rocket.png',
+    img: '../../static/images/emu.png',
     model: '9ca3dc74a66847da981a5353f3e71a68',
-    price: '24635',
-    rating: ['fas', 'fas', 'fas', 'fas', 'far'],
+    price: '84635',
+    rating: ['fas', 'fas', 'fas', 'fas', 'fas'],
     quickFacts: {
       weight: '55.3kg',
       operating_Pressure: '29.6kPa',
       primary_Support: '480min',
       backup_Support: '30min'
     },
-    description: 'The Atlas V was developed by Lockheed Martin Commercial Launch Services as part of the US Air Force Evolved Expendable Launch Vehicle (EELV) program and made its inaugural flight on August 21, 2002. The vehicle operates out of Space Launch Complex 41 at Cape Canaveral Air Force Station and Space Launch Complex 3-E at Vandenberg Air Force Base.'
+    description: 'The Extravehicular Mobility Unit (EMU) is an independent anthropomorphic spacesuit that provides environmental protection, mobility, life support, and communications for astronauts performing extravehicular activity (EVA) in Earth orbit.'
+  },
+  orlan: {
+    name: 'Orlan',
+    img: '../../static/images/orlan.png',
+    model: '90d40d6f856348b889166ad70998cfd5',
+    price: '43138',
+    rating: ['fas', 'fas', 'fas', 'fas', 'far'],
+    quickFacts: {
+      weight: '72.6kg',
+      operating_Pressure: '25.7kPa',
+      primary_Support: '360min',
+      backup_Support: '80min'
+    },
+    description: 'The Orlan space suit is a series of semi-rigid one-piece space suit models designed and built by NPP Zvezda. They have been used for spacewalks (EVAs) in the Russian space program, the successor to the Soviet space program, and by space programs of other countries, including NASA.'
+  },
+  feitian: {
+    name: 'Feitian',
+    img: '../../static/images/feitian.png',
+    model: 'cc650a281a9840d19518107599e28dc3',
+    price: '23578',
+    rating: ['fas', 'fas', 'far', 'far', 'far'],
+    quickFacts: {
+      weight: '76.8kg',
+      operating_Pressure: '28.8kPa',
+      primary_Support: '500min',
+      backup_Support: '90min'
+    },
+    description: `A Feitian space suit is a Chinese spacesuit that was developed for the Shenzhou 7. Astronaut Zhai Zhigang wore it during China's first-ever extra-vehicular activity (EVA) on September 27, 2008.`
+  },
+  constellation: {
+    name: 'Constellation',
+    img: '../../static/images/constellation.png',
+    model: '2735511b8ef949c992f82fbb54f98d43',
+    price: '44392',
+    rating: ['fas', 'fas', 'fas', 'far', 'far'],
+    quickFacts: {
+      weight: '35.8kg',
+      operating_Pressure: '22.3kPa',
+      primary_Support: '640min',
+      backup_Support: '45min'
+    },
+    description: `The Constellation Space Suit is a full pressure suit system that would have served as an intra-vehicular activity (IVA) and extra-vehicular activity (EVA) garment for the proposed Project Constellation flights, which were planned to begin after the Space Shuttle retired.`
   }
 }
