@@ -10,8 +10,9 @@ export default class Resort extends Component {
   constructor (props) {
     super(props)
 
+    this.selectResort = this.selectResort.bind(this)
     this.state = {
-      selection: null
+      resortName: null
     }
   }
 
@@ -19,6 +20,12 @@ export default class Resort extends Component {
     const resortsRes = await axios.get(`/api/resorts/${query.name}`)
     const resorts = resortsRes.data
     return { query, resorts }
+  }
+
+  selectResort (name) {
+    this.setState({
+      resortName: name
+    })
   }
 
   render () {
@@ -32,7 +39,7 @@ export default class Resort extends Component {
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Select your resort:</p>
             <Row>
-              {this.props.resorts.map(resort => <ResortCard key={resort._id} resort={resort} />)}
+              {this.props.resorts.map(resort => <ResortCard key={resort._id} resort={resort} global={this.props.query} />)}
             </Row>
           </Container>
         </Jumbotron>

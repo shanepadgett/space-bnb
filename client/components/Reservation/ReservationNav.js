@@ -13,7 +13,7 @@ export default class ReservationNav extends Component {
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
               <Link href='/'>
-                <Button color='btn btn-outline-secondary'><i className='fas fa-check' /></Button>
+                <Button color='btn btn-outline-success'><i className='fas fa-check' /></Button>
               </Link>
             </Col>
           </Row>
@@ -24,6 +24,7 @@ export default class ReservationNav extends Component {
                 width: 100%
               }
     
+              .btn-outline-success:hover,
               .btn-outline-secondary:hover {
                 color: #000 !important;
               }

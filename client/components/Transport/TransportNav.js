@@ -9,10 +9,19 @@ export default class TransportNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/resort', query: this.props.dates }}>
-                <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
+              <Link href={{ pathname: '/' }}>
+                <Button color='btn btn-outline-secondary m-3'><i className='fas fa-times' /></Button>
               </Link>
-              <Link href={{ pathname: '/suit', query: this.props.dates }}>
+              <Link href={{
+                pathname: '/suit',
+                query: {
+                  name: global.name,
+                  start: global.start,
+                  end: global.end,
+                  resort: global.name,
+                  transport: this.props.rocket
+                }
+              }}>
                 <Button color='btn btn-outline-danger'>
                   <i className='fas fa-angle-right' />
                     Select

@@ -33,7 +33,7 @@ export default class transport extends Component {
       <div className='transport'>
         <SpaceScreen />
         <Logo />
-        <TransportNav />
+        <TransportNav rocket={this.state.rocket} />
         <ProgressBar progressValue='60' />
         <Jumbotron className='pt-4'>
           <Container>

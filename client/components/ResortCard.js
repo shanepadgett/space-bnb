@@ -14,7 +14,7 @@ const addCommas = x => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
-const ResortCard = ({ resort }) => (
+const ResortCard = ({ global, resort }) => (
   <Col md='4' sm='6' className='mb-5'>
     <Card className='border-0 bg-transparent'>
       <CardImg
@@ -35,7 +35,15 @@ const ResortCard = ({ resort }) => (
             </Link>
           </Col>
           <Col xs='6' className=''>
-            <Link href='/transport'>
+            <Link href={{
+              pathname: '/transport',
+              query: {
+                name: global.name,
+                start: global.start,
+                end: global.end,
+                resort: resort.name.replace(/ /g, '-')
+              }
+            }} >
               <Button outline block color='danger' className='p-1'>
                 <i className='fas fa-angle-right' />
                 Select
