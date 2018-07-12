@@ -9,7 +9,7 @@ export default class SuitNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/transport',
+              <Link prefetch href={{ pathname: '/transport',
                 query: {
                   name: this.props.global.name,
                   start: this.props.global.start,
@@ -19,7 +19,7 @@ export default class SuitNav extends Component {
               }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
-              <Link href={{
+              <Link prefetch href={{
                 pathname: '/reservation',
                 query: {
                   name: this.props.global.name,

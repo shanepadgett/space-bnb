@@ -9,10 +9,10 @@ export default class ReservationNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/suit', query: this.props.dates }}>
+              <Link prefetch href={{ pathname: '/suit', query: {...this.props.query} }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
-              <Link href='/'>
+              <Link prefetch href='/'>
                 <Button color='btn btn-outline-success'><i className='fas fa-check' /></Button>
               </Link>
             </Col>

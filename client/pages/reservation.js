@@ -37,7 +37,7 @@ export default class Reservation extends Component {
       <div className='transport'>
         <SpaceScreen />
         <Logo />
-        <ReservationNav />
+        <ReservationNav query={this.props.query} />
         <ProgressBar progressValue='100' />
         <Jumbotron className='pt-4'>
           <Container>
