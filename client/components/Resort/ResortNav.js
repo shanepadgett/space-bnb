@@ -9,9 +9,12 @@ export default class ResortNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/date', query: this.props.dates }}>
-                <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
+              <Link href='/'>
+                <Button color='btn btn-outline-secondary m-3'><i className='fas fa-times' /></Button>
               </Link>
+              {/* <Link href={{ pathname: '/date', query: this.props.dates }}>
+                <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
+              </Link> */}
               {/* <Link href={{ pathname: '/transport', query: this.props.dates }}>
                 <Button color='btn btn-outline-secondary'><i className='fas fa-arrow-right' /></Button>
               </Link> */}

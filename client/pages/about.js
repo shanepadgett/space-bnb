@@ -6,6 +6,7 @@ import NavButtons from '../components/NavButtons'
 import moment from 'moment'
 import EventBus from 'eventing-bus'
 import events from '../lib/constants/eventConstants'
+import Logo from '../components/Global/Logo'
 
 export default class About extends Component {
   constructor (props) {
@@ -47,8 +48,9 @@ export default class About extends Component {
     return (
       <div>
         <SpaceScreen />
+        <Logo />
         <NavButtons
-          dates={{
+          global={{
             name: this.props.query.name,
             start: this.state.startDate.format('MM-DD-YYYY'),
             end: this.state.endDate.format('MM-DD-YYYY')

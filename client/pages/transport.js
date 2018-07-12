@@ -25,7 +25,6 @@ export default class transport extends Component {
     this.setState({
       rocket: key
     })
-    console.log(this.state)
   }
 
   render () {
@@ -33,7 +32,7 @@ export default class transport extends Component {
       <div className='transport'>
         <SpaceScreen />
         <Logo />
-        <TransportNav />
+        <TransportNav rocket={this.state.rocket} global={this.props.query} />
         <ProgressBar progressValue='60' />
         <Jumbotron className='pt-4'>
           <Container>

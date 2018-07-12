@@ -9,10 +9,27 @@ export default class SuitNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/transport', query: this.props.dates }}>
+              <Link href={{ pathname: '/transport',
+                query: {
+                  name: this.props.global.name,
+                  start: this.props.global.start,
+                  end: this.props.global.end,
+                  resort: this.props.global.resort
+                }
+              }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-arrow-left' /></Button>
               </Link>
-              <Link href={{ pathname: '/reservation', query: this.props.dates }}>
+              <Link href={{
+                pathname: '/reservation',
+                query: {
+                  name: this.props.global.name,
+                  start: this.props.global.start,
+                  end: this.props.global.end,
+                  resort: this.props.global.resort,
+                  transport: this.props.global.transport,
+                  suit: this.props.suit
+                }
+              }}>
                 <Button color='btn btn-outline-danger'>
                   <i className='fas fa-angle-right' />
                     Select
