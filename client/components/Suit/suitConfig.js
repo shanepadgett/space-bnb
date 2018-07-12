@@ -1,10 +1,10 @@
 export default {
   emu: {
-    name: 'Extravehicular Mobility Unit',
-    img: '../../static/images/emu.png',
+    name: 'EMU',
+    img: '../../static/images/emu.svg',
     model: '9ca3dc74a66847da981a5353f3e71a68',
     price: '84635',
-    rating: ['fas', 'fas', 'fas', 'fas', 'fas'],
+    rating: ['fas', 'fas', 'fas', 'fas', 'far'],
     quickFacts: {
       weight: '55.3kg',
       operating_Pressure: '29.6kPa',
@@ -15,7 +15,7 @@ export default {
   },
   orlan: {
     name: 'Orlan',
-    img: '../../static/images/orlan.png',
+    img: '../../static/images/orlan.svg',
     model: '90d40d6f856348b889166ad70998cfd5',
     price: '43138',
     rating: ['fas', 'fas', 'fas', 'fas', 'far'],
@@ -29,7 +29,7 @@ export default {
   },
   feitian: {
     name: 'Feitian',
-    img: '../../static/images/feitian.png',
+    img: '../../static/images/feitian.svg',
     model: 'cc650a281a9840d19518107599e28dc3',
     price: '23578',
     rating: ['fas', 'fas', 'far', 'far', 'far'],
@@ -41,18 +41,18 @@ export default {
     },
     description: `A Feitian space suit is a Chinese spacesuit that was developed for the Shenzhou 7. Astronaut Zhai Zhigang wore it during China's first-ever extra-vehicular activity (EVA) on September 27, 2008.`
   },
-  constellation: {
-    name: 'Constellation',
-    img: '../../static/images/constellation.png',
+  zSeries: {
+    name: 'Z Series',
+    img: '../../static/images/zseries.svg',
     model: '2735511b8ef949c992f82fbb54f98d43',
-    price: '44392',
-    rating: ['fas', 'fas', 'fas', 'far', 'far'],
+    price: '94392',
+    rating: ['fas', 'fas', 'fas', 'fas', 'fas'],
     quickFacts: {
       weight: '35.8kg',
       operating_Pressure: '22.3kPa',
       primary_Support: '640min',
       backup_Support: '45min'
     },
-    description: `The Constellation Space Suit is a full pressure suit system that would have served as an intra-vehicular activity (IVA) and extra-vehicular activity (EVA) garment for the proposed Project Constellation flights, which were planned to begin after the Space Shuttle retired.`
+    description: `The Z series is a series of prototype extra-vehicular activity (EVA) space suits being developed in the Advanced Extravehicular Mobility Unit (AEMU) project under NASA's Advanced Exploration Systems (AES) program. The suits are being designed to be used for both micro-gravity and planetary EVAs.`
   }
 }

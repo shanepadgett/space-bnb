@@ -4,7 +4,7 @@ import ProgressBar from '../components/ProgressBar'
 import { Container, Row, Col, Jumbotron } from 'reactstrap'
 import SuitNav from '../components/Suit/SuitNav'
 import SpaceScreen from '../components/Global/SpaceScreen'
-import SuitModel from '../components/Suit/SuitModel'
+import Model from '../components/Global/Model'
 import SuitDetail from '../components/Suit/SuitDetail'
 import suitConfig from '../components/Suit/suitConfig'
 
@@ -41,10 +41,10 @@ export default class Resort extends Component {
             <p className='lead'>Available spacesuits:</p>
             <Row>
               <Col md='5' lg='4' className='mb-3'>
-                <SuitModel model={suitConfig[this.state.suit].model} />
+                <Model model={suitConfig[this.state.suit].model} />
               </Col>
               <Col md='7' lg='8'>
-                <SuitDetail rocket={suitConfig[this.state.rocket]} rocketConfig={suitConfig} changeSuit={this.changeSuit} />
+                <SuitDetail suit={suitConfig[this.state.suit]} suitConfig={suitConfig} changeSuit={this.changeSuit} />
               </Col>
             </Row>
           </Container>
@@ -56,8 +56,7 @@ export default class Resort extends Component {
           .jumbotron {
             background: transparent !important;
           }
-          .display-4,
-          .planet-nickname {
+          .display-4 {
             color: #fff;
           }
           hr {

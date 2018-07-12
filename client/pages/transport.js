@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TransportNav from '../components/Transport/TransportNav'
 import ProgressBar from '../components/ProgressBar'
-import TransportModel from '../components/Transport/TransportModel'
+import Model from '../components/Global/Model'
 import TransportDetail from '../components/Transport/TransportDetail'
 import { Container, Row, Col, Jumbotron } from 'reactstrap'
 import Logo from '../components/Global/Logo'
@@ -41,7 +41,7 @@ export default class transport extends Component {
             <p className='lead'>Available transport:</p>
             <Row>
               <Col md='5' lg='4' className='mb-3'>
-                <TransportModel model={rocketConfig[this.state.rocket].model} />
+                <Model model={rocketConfig[this.state.rocket].model} />
               </Col>
               <Col md='7' lg='8'>
                 <TransportDetail rocket={rocketConfig[this.state.rocket]} rocketConfig={rocketConfig} changeRocket={this.changeRocket} />
