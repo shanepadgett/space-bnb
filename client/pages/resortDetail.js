@@ -1,5 +1,6 @@
 import { Component } from 'react'
-import { Container, Row } from 'reactstrap'
+import { Container, Row, Button } from 'reactstrap'
+import Link from 'next/link'
 import ResortDetailImages from '../components/ResortDetail/ResortDetailImages'
 import ResortDetails from '../components/ResortDetail/ResortDetails'
 import axios from 'axios'
@@ -8,8 +9,7 @@ class ResortDetail extends Component {
   static async getInitialProps ({ query }) {
     const resortRes = await axios.get(`/api/resort/${query.resortId}`)
     const resort = resortRes.data
-
-    return { resort }
+    return { resort, query }
   }
 
   render () {
@@ -19,10 +19,13 @@ class ResortDetail extends Component {
           <img src={this.props.resort.images[0]} className='fixed-to-bg' />
         </div>
         <Container>
-          <Row>
-            <h1 className='text-light text-center w-100'>
+          <Row className='m-0 w-100 d-flex justify-content-between mt-4'>
+            <h1 className='text-light align-content-center m-0 my-auto'>
               {this.props.resort.name}
             </h1>
+            <Link prefetch href={{ pathname: '/resort', query: this.props.query }}>
+              <Button>Go Back</Button>
+            </Link>
           </Row>
           <ResortDetailImages images={this.props.resort.images} />
           <ResortDetails

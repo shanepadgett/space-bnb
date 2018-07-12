@@ -28,7 +28,7 @@ const ResortCard = ({ global, resort }) => (
       <CardBody className='bg-transparent pl-0 pr-0'>
         <Row>
           <Col xs='6' className=''>
-            <Link href={{ pathname: '/resortDetail', query: {resortId: resort._id} }}>
+            <Link href={{ pathname: '/resortDetail', query: {...global, resortId: resort._id} }}>
               <Button outline block color='secondary' className='p-1'>
                 View
               </Button>
