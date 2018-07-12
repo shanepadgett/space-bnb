@@ -9,7 +9,7 @@ export default class ResortNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href='/'>
+              <Link prefetch href='/'>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-times' /></Button>
               </Link>
               {/* <Link href={{ pathname: '/date', query: this.props.dates }}>

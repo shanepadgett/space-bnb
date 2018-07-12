@@ -14,7 +14,7 @@ export default class Reservation extends Component {
       <div>
         <SpaceScreen />
         <Logo />
-        <ReservationNav />
+        <ReservationNav query={this.props.query} />
         <ProgressBar progressValue='100' />
         <style global jsx>{`
         `}</style>

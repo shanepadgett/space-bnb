@@ -9,10 +9,10 @@ export default class TransportNav extends Component {
         <Container fluid>
           <Row>
             <Col xs='12'>
-              <Link href={{ pathname: '/' }}>
+              <Link prefetch href={{ pathname: '/' }}>
                 <Button color='btn btn-outline-secondary m-3'><i className='fas fa-times' /></Button>
               </Link>
-              <Link href={{
+              <Link prefetch href={{
                 pathname: '/suit',
                 query: {
                   name: this.props.global.name,
