@@ -15,10 +15,10 @@ export default class TransportNav extends Component {
               <Link href={{
                 pathname: '/suit',
                 query: {
-                  name: global.name,
-                  start: global.start,
-                  end: global.end,
-                  resort: global.name,
+                  name: this.props.global.name,
+                  start: this.props.global.start,
+                  end: this.props.global.end,
+                  resort: this.props.global.resort,
                   transport: this.props.rocket
                 }
               }}>

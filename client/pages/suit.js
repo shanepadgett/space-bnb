@@ -33,7 +33,7 @@ export default class Resort extends Component {
       <div>
         <SpaceScreen />
         <Logo />
-        <SuitNav />
+        <SuitNav suit={this.state.suit} global={this.props.query} />
         <ProgressBar progressValue='60' />
         <Jumbotron className='pt-4'>
           <Container>
