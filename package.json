@@ -9,7 +9,7 @@
     "precommit": "lint-staged",
     "seedDev": "\"babel-node server/db/seed.js --presets env,stage-0\"",
     "seedProd": "cross-env NODE_ENV=production \"babel-node server/db/seed.js --presets env,stage-0\"",
-    "removeDeployments": "now rm space-bnb --yes",
+    "rmDeploy": "now rm space-bnb --yes",
     "deploy": "now && now alias"
   },
   "repository": {
