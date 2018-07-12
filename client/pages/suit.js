@@ -34,7 +34,7 @@ export default class Resort extends Component {
         <SpaceScreen />
         <Logo />
         <SuitNav suit={this.state.suit} global={this.props.query} />
-        <ProgressBar progressValue='60' />
+        <ProgressBar progressValue='80' />
         <Jumbotron className='pt-4'>
           <Container>
             <h1 className='display-4'>{this.props.query.name}</h1>
