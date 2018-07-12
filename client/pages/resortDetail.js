@@ -1,4 +1,7 @@
 import { Component } from 'react'
+import { Container, Row } from 'reactstrap'
+import ResortDetailImages from '../components/ResortDetail/ResortDetailImages'
+import ResortDetails from '../components/ResortDetail/ResortDetails'
 import axios from 'axios'
 
 class ResortDetail extends Component {
@@ -11,10 +14,23 @@ class ResortDetail extends Component {
 
   render () {
     return (
-      <div className='reservation-bg fixed-to-bg'>
-        <img src={this.props.resort.images[0]} className='fixed-to-bg' />
-        <h1 className='text-light'>{this.props.resort.name}</h1>
-
+      <div className=''>
+        <div className='reservation-bg fixed-to-bg'>
+          <img src={this.props.resort.images[0]} className='fixed-to-bg' />
+        </div>
+        <Container>
+          <Row>
+            <h1 className='text-light text-center w-100'>
+              {this.props.resort.name}
+            </h1>
+          </Row>
+          <ResortDetailImages images={this.props.resort.images} />
+          <ResortDetails
+            summary={this.props.resort.summary}
+            amenities={this.props.resort.amenities}
+            reviews={this.props.resort.reviews}
+          />
+        </Container>
         <style jsx>{`
           img {
             opacity: 0.2;

@@ -12,11 +12,11 @@ const generateResorts = (resortIdArr) => {
   const resortSeeds = []
 
   for (let i = 0; i < resortIdArr.length; i++) {
-    const amenitiesArr = [
-      faker.commerce.productAdjective(),
-      faker.commerce.productAdjective(),
-      faker.commerce.productAdjective()
-    ]
+    const amenitiesArr = []
+
+    for (let k = 0; k < ((Math.random() * 10) + 4); k++) {
+      amenitiesArr.push(faker.commerce.productAdjective())
+    }
 
     const imagesArr = []
 
@@ -28,7 +28,7 @@ const generateResorts = (resortIdArr) => {
       _id: resortIdArr[i],
       name: faker.company.companyName(),
       price: faker.commerce.price(2000, 20000, 0),
-      summary: faker.lorem.sentences(3),
+      summary: faker.lorem.paragraphs(3),
       amenities: amenitiesArr,
       images: imagesArr,
       reviews: []
