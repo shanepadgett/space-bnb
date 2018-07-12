@@ -7,25 +7,25 @@ const ReservationSchema = new Schema({
     type: Date,
     required: true
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+  username: {
+    type: String,
+    required: true
   },
   planet: {
-    type: Schema.Types.ObjectId,
-    ref: 'Planet'
+    type: String,
+    required: true
   },
   resort: {
-    type: Schema.Types.ObjectId,
-    ref: 'Resort'
+    type: String,
+    required: true
   },
   rocket: {
-    type: Schema.Types.ObjectId,
-    ref: 'Rocket'
+    type: String,
+    required: true
   },
   suit: {
-    type: Schema.Types.ObjectId,
-    ref: 'Suit'
+    type: String,
+    required: true
   }
 })
 
