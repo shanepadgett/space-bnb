@@ -64,7 +64,7 @@ export default class Reservation extends Component {
                   </tbody>
                 </Table>
               </Col>
-              <Col >
+              <Col className='pt-4 pl-4 border-left'>
                 <UserInfoCard />
               </Col>
             </Row>            
