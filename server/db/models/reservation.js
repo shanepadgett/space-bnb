@@ -3,11 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const ReservationSchema = new Schema({
-  departDate: {
+  departure: {
     type: Date,
     required: true
   },
-  returnDate: {
+  return: {
     type: Date,
     required: true
   },
@@ -16,7 +16,7 @@ const ReservationSchema = new Schema({
     ref: 'User',
     required: true
   },
-  planet: {
+  destination: {
     type: String,
     required: true
   },
@@ -24,7 +24,7 @@ const ReservationSchema = new Schema({
     type: String,
     required: true
   },
-  rocket: {
+  transport: {
     type: String,
     required: true
   },

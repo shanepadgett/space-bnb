@@ -8,14 +8,13 @@ import suitConfig from '../components/Suit/suitConfig'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
 import rocketConfig from '../components/Transport/rocketConfig'
 import UserInfoCard from '../components/Reservation/UserInfoCard'
-import axios from 'axios'
 
 export default class Reservation extends Component {
   static async getInitialProps ({ query }) {
     let obj = {
       destination: planetConfig[query.name].name.charAt(0).toUpperCase().concat(planetConfig[query.name].name.slice(1)),
-      departure: query.start,
-      return: query.end,
+      departure: Date(query.start),
+      return: Date(query.end),
       resort: query.resort,
       transport: rocketConfig[query.transport].name,
       suit: suitConfig[query.suit].name
@@ -65,9 +64,9 @@ export default class Reservation extends Component {
                 </Table>
               </Col>
               <Col className='pt-4 pl-4 border-left'>
-                <UserInfoCard />
+                <UserInfoCard reservationData={this.props.obj} />
               </Col>
-            </Row>            
+            </Row>
           </Container>
         </Jumbotron>
         <style global jsx>{`          
