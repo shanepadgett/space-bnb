@@ -3,15 +3,20 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const ReservationSchema = new Schema({
-  date: {
+  departure: {
     type: Date,
     required: true
   },
-  username: {
-    type: String,
+  return: {
+    type: Date,
     required: true
   },
-  planet: {
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  destination: {
     type: String,
     required: true
   },
@@ -19,7 +24,7 @@ const ReservationSchema = new Schema({
     type: String,
     required: true
   },
-  rocket: {
+  transport: {
     type: String,
     required: true
   },

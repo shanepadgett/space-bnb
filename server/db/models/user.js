@@ -13,7 +13,7 @@ const UserSchema = new Schema({
   },
   username: {
     type: String,
-    required: true
+    required: false
   },
   email: {
     type: String,
@@ -21,7 +21,7 @@ const UserSchema = new Schema({
   },
   image: {
     type: String,
-    required: true
+    required: false
   }
 })
 
