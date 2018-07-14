@@ -4,11 +4,13 @@ import Link from 'next/link'
 import ResortDetailImages from '../components/ResortDetail/ResortDetailImages'
 import ResortDetails from '../components/ResortDetail/ResortDetails'
 import axios from 'axios'
+import resortImages from '../lib/configs/resortImages'
 
 class ResortDetail extends Component {
   static async getInitialProps ({ query }) {
     const resortRes = await axios.get(`/api/resort/${query.resortId}`)
     const resort = resortRes.data
+    resort.images = resortImages[query.name]
     return { resort, query }
   }
 
