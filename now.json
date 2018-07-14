@@ -1,0 +1,13 @@
+{
+  "name": "space-bnb",
+  "alias": "space-bnb",
+  "env": {
+    "MONGODB_URI_PROD": "@space-bnb-mongo-url"
+  },
+  "scale": {
+    "sfo1": {
+      "min": 1,
+      "max": 1
+    }
+  }
+}
