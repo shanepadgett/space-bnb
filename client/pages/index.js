@@ -3,8 +3,12 @@ import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button,
+  Row,
+  Col
 } from 'reactstrap'
+import Link from 'next/link'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
 import PlanetMenu from '../components/Planet/PlanetMenu'
 import EventBus from 'eventing-bus'
@@ -52,8 +56,16 @@ class Index extends Component {
   render () {
     return (
       <div>
-        <Logo />
-        <PlanetMenu selection={this.state.selection} showMenu={this.state.showMenu} />
+        <Row className='d-flex justify-content-between w-100 m-0'>
+          <Logo />
+          <Link href='/reservations'>
+            <Button outline color='secondary mt-3 mr-4'>Reservations</Button>
+          </Link>
+        </Row>
+        <PlanetMenu
+          selection={this.state.selection}
+          showMenu={this.state.showMenu}
+        />
         <div className='dropdown-wrapper'>
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle className='btn btn-outline-danger'>

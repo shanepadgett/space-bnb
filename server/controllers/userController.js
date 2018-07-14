@@ -6,3 +6,9 @@ export const createUser = ({body}, res, _) => {
     .then(data => res.json(data))
     .catch(err => res.json(err))
 }
+
+export const getUser = (req, res, _) => {
+  User.findOne({email: req.params.email})
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+}
