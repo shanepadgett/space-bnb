@@ -61,6 +61,9 @@ export default class Resort extends Component {
           .display-4 {
             color: #fff;
           }
+          .active-suit {
+            background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
+          }
           hr {
             display: block;
             height: 1px;

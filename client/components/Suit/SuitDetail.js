@@ -7,6 +7,15 @@ const addCommas = x => {
 }
 
 export default class SuitDetail extends Component {
+  clickHandle (key, e) {
+    this.props.changeSuit(key)
+    const els = document.getElementsByClassName('rounded-circle')
+    Array.prototype.forEach.call(els, el => {
+      el.classList.remove('active-suit')
+    })
+    document.getElementById(key).classList.add('active-suit')
+  }
+
   render () {
     return (
       <Card>
@@ -15,7 +24,7 @@ export default class SuitDetail extends Component {
             {Object.keys(this.props.suitConfig).map(key => {
               return (
                 <Col xs='3' className='text-center mb-5 p-0' key={key}>
-                  <div className='rounded-circle text-center' onClick={this.props.changeSuit.bind(this, key)}>
+                  <div className='rounded-circle text-center' id={key} onClick={this.clickHandle.bind(this, key)}>
                     <img src={this.props.suitConfig[key].img} className='suit-render p-2' alt='Suit render' />
                   </div>
                 </Col>
@@ -86,6 +95,9 @@ export default class SuitDetail extends Component {
             display: inline-block;
           }
           .rounded-circle:hover {
+            background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
+          }
+          .active-suit {
             background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
           }
           .suit-render {

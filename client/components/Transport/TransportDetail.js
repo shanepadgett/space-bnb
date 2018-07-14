@@ -7,6 +7,15 @@ const addCommas = x => {
 }
 
 export default class TransportDetail extends Component {
+  clickHandle (key, e) {
+    this.props.changeRocket(key)
+    const els = document.getElementsByClassName('rounded-circle')
+    Array.prototype.forEach.call(els, el => {
+      el.classList.remove('active-rocket')
+    })
+    document.getElementById(key).classList.add('active-rocket')
+  }
+
   render () {
     return (
       <Card>
@@ -15,7 +24,7 @@ export default class TransportDetail extends Component {
             {Object.keys(this.props.rocketConfig).map(key => {
               return (
                 <Col xs='3' className='text-center mb-5 p-0' key={key}>
-                  <div className='rounded-circle text-center' onClick={this.props.changeRocket.bind(this, key)}>
+                  <div className='rounded-circle text-center' id={key} onClick={this.clickHandle.bind(this, key)}>
                     <img src={this.props.rocketConfig[key].img} className='rocket-render p-2' alt='Rocket render' />
                   </div>
                 </Col>
@@ -86,6 +95,9 @@ export default class TransportDetail extends Component {
             display: inline-block;
           }
           .rounded-circle:hover {
+            background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
+          }
+          .active-rocket {
             background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
           }
           .rocket-render {
