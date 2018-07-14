@@ -239,6 +239,30 @@ export default {
         rx: 0.001,
         ry: 0.001
       }
+    },
+    ring: {
+      radius: 1.5,
+      segments: 2,
+      images: {
+        diffuseMap: '../static/images/saturn-ring.png',
+        bumpMap: '',
+        specularMap: ''
+      },
+      imageOptions: {
+        bumpScale: 0.1,
+        specular: new THREE.Color('grey')
+      },
+      transform: {
+        position: {
+          px: 1,
+          py: -15,
+          pz: -100
+        },
+        rotation: {
+          rx: -45,
+          ry: -70
+        }
+      }
     }
   },
   uranus: {
