@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import SpaceScreen from '../components/Global/SpaceScreen'
 import DateWrapper from '../components/Date/DateWrapper'
 import ProgressBar from '../components/ProgressBar'
 import DateNav from '../components/Date/DateNav'
@@ -42,9 +41,8 @@ export default class About extends Component {
 
   render () {
     return (
-      <div>
+      <div className='bg-reservation'>
         <Logo />
-        <SpaceScreen />
         <DateNav
           dates={{
             name: this.props.query.name,
@@ -61,6 +59,9 @@ export default class About extends Component {
           endDate={this.state.endDate}
         />
         <style global jsx>{`
+          .bg-reservation {
+            background-color: rgba(9, 9, 9, 0.8);
+          } 
         `}</style>
       </div>
     )

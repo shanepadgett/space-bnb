@@ -35,12 +35,12 @@ export default class Reservation extends Component {
 
   render () {
     return (
-      <div className='transport'>
+      <div className='bg-reservation'>
         <SpaceScreen />
         <Logo />
         <ReservationNav query={this.props.query} />
         <ProgressBar progressValue='100' />
-        <Jumbotron className='pt-4'>
+        <Jumbotron className='pt-4 pb-0 mb-0'>
           <Container>
             <h1 className='display-4'>{this.props.obj.destination}</h1>
             <p className='lead'>Your reservation is complete!</p>
@@ -69,7 +69,10 @@ export default class Reservation extends Component {
             </Row>
           </Container>
         </Jumbotron>
-        <style global jsx>{`          
+        <style global jsx>{`     
+          .bg-reservation {
+            background-color: rgba(9, 9, 9, 0.8);
+          }      
           .card {
             background: transparent !important;
           }
