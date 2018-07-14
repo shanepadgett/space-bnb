@@ -72,13 +72,21 @@ class UserInfoCard extends Component {
               placeholder='example@place.com'
             />
           </FormGroup>
+          <FormGroup>
+            <Label for='email'>Create Password</Label>
+            <Input
+              type='password'
+              id='password'
+              name='password'
+            />
+          </FormGroup>
           <div className='d-flex justify-content-between'>
             <Button
               outline
               color='secondary'
               onClick={this.onGuestButtonClick.bind(this)}
             >
-              Continue as Guest
+              Create Account
             </Button>
             <Button outline color='danger'>Log In</Button>
           </div>

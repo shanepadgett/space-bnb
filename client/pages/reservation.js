@@ -25,7 +25,7 @@ export default class Reservation extends Component {
 
     let total = prices.reduce((x, y) => x + y)
 
-    return { obj, total }
+    return { obj, total, query }
   }
 
   addCommas (x) {
