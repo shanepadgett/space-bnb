@@ -7,11 +7,8 @@ export default class Model extends Component {
       <Card className='text-center black iframe-card'>
         <iframe
           height='500'
-          src={`https://sketchfab.com/models/${this.props.model}/embed?autostart=1&autospin=0.5&camera=0&ui_stop=0&ui_annotations=0&ui_controls=0&transparent=1&ui_infos=0&ui_inspector=0`}
+          src={`https://sketchfab.com/models/${this.props.model}/embed?autospin=0.5&camera=0&ui_stop=0&ui_annotations=0&ui_controls=0&ui_infos=0&ui_inspector=0`}
           frameBorder='0'
-          allow='autoplay; fullscreen; vr'
-          mozallowfullscreen='true'
-          webkitallowfullscreen='true'
         />
 
         <style global jsx>{`

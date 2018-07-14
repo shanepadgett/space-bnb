@@ -5,6 +5,7 @@ import ResortNav from '../components/Resort/ResortNav'
 import axios from 'axios'
 import { Container, Row, Jumbotron } from 'reactstrap'
 import Logo from '../components/Global/Logo'
+import resortImages from '../lib/configs/resortImages'
 
 export default class Resort extends Component {
   constructor (props) {
@@ -19,6 +20,9 @@ export default class Resort extends Component {
   static async getInitialProps ({ query }) {
     const resortsRes = await axios.get(`/api/resorts/${query.name}`)
     const resorts = resortsRes.data
+    resorts.forEach(resort => {
+      resort.images = resortImages[query.name]
+    })
     return { query, resorts }
   }
 
