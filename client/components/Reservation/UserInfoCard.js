@@ -74,11 +74,7 @@ class UserInfoCard extends Component {
           </FormGroup>
           <FormGroup>
             <Label for='email'>Create Password</Label>
-            <Input
-              type='password'
-              id='password'
-              name='password'
-            />
+            <Input type='password' id='password' name='password' />
           </FormGroup>
           <div className='d-flex justify-content-between'>
             <Button
@@ -94,9 +90,12 @@ class UserInfoCard extends Component {
       )
     } else {
       return (
-        <Link prefetch href='/'>
-          <Button block>Go Home</Button>
-        </Link>
+        <div>
+          <h2 className='text-success w-100 text-center mb-2'>Reservation Confirmed!</h2>
+          <Link prefetch href='/'>
+            <Button block>Go Home</Button>
+          </Link>
+        </div>
       )
     }
   }
