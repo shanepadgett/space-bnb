@@ -16,6 +16,7 @@ class Layout extends Component {
         <style global jsx>{`
           body {
             font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
           }
           canvas {
             width: 100vw;

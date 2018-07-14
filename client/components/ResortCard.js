@@ -16,7 +16,7 @@ const addCommas = x => {
 
 const ResortCard = ({ global, resort }) => (
   <Col md='4' sm='6' className='mb-5'>
-    <Card className='border-0 bg-transparent'>
+    <Card className='border-0 bg-transparent animated zoomIn'>
       <CardImg
         top
         width='100%'
