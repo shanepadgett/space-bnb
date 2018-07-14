@@ -45,7 +45,7 @@ export default class About extends Component {
 
   render () {
     return (
-      <div className='bg-reservation'>
+      <div className='bg-reservation m-0'>
         <Logo />
         <NavButtons
           global={{
@@ -66,7 +66,7 @@ export default class About extends Component {
           .bg-reservation {
             background-color: rgba(9, 9, 9, 0.8);
             min-height: 100vh;
-            min-width: 100vw;
+            min-width: 100%;
           } 
         `}</style>
       </div>
