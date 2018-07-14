@@ -3,7 +3,6 @@ import Logo from '../components/Global/Logo'
 import ProgressBar from '../components/ProgressBar'
 import { Container, Row, Col, Jumbotron } from 'reactstrap'
 import SuitNav from '../components/Suit/SuitNav'
-import SpaceScreen from '../components/Global/SpaceScreen'
 import Model from '../components/Global/Model'
 import SuitDetail from '../components/Suit/SuitDetail'
 import suitConfig from '../components/Suit/suitConfig'
@@ -30,12 +29,11 @@ export default class Resort extends Component {
 
   render () {
     return (
-      <div>
-        <SpaceScreen />
+      <div className='bg-reservation'>
         <Logo />
         <SuitNav suit={this.state.suit} global={this.props.query} />
         <ProgressBar progressValue='80' />
-        <Jumbotron className='pt-4'>
+        <Jumbotron className='pt-4 pb-0 mb-0'>
           <Container>
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Available spacesuits:</p>
@@ -49,7 +47,10 @@ export default class Resort extends Component {
             </Row>
           </Container>
         </Jumbotron>
-        <style global jsx>{`          
+        <style global jsx>{`     
+          .bg-reservation {
+            background-color: rgba(9, 9, 9, 0.8);
+          }      
           .card {
             background: transparent !important;
           }

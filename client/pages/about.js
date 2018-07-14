@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import SpaceScreen from '../components/Global/SpaceScreen'
 import DateWrapper from '../components/Date/DateWrapper'
 import ProgressBar from '../components/ProgressBar'
 import NavButtons from '../components/NavButtons'
@@ -46,8 +45,7 @@ export default class About extends Component {
 
   render () {
     return (
-      <div>
-        <SpaceScreen />
+      <div className='bg-reservation'>
         <Logo />
         <NavButtons
           global={{
@@ -56,7 +54,7 @@ export default class About extends Component {
             end: this.state.endDate.format('MM-DD-YYYY')
           }}
         />
-        <ProgressBar />
+        <ProgressBar progressValue='20' />
         <DateWrapper
           selection={this.props.query.name}
           setEndDate={this.setEndDate}
@@ -64,6 +62,11 @@ export default class About extends Component {
           startDate={this.state.startDate}
           endDate={this.state.endDate}
         />
+        <style global jsx>{`
+          .bg-reservation {
+            background-color: rgba(9, 9, 9, 0.8);
+          } 
+        `}</style>
       </div>
     )
   }

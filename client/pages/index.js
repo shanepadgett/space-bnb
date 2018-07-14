@@ -24,7 +24,6 @@ class Index extends Component {
   }
 
   componentDidMount () {
-    console.log(this.state.selection)
     if (this.state.selection !== 'earth') {
       EventBus.publish(events.selectPlanet, 'earth')
       this.setState({

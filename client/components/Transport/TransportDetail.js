@@ -62,6 +62,9 @@ export default class TransportDetail extends Component {
           </Row>
         </CardBody>
         <style global jsx>{`
+          .card {
+            border: none;
+          }
           th,
           td {
             padding: 0 !important;

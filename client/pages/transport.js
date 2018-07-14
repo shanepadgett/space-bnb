@@ -5,7 +5,6 @@ import Model from '../components/Global/Model'
 import TransportDetail from '../components/Transport/TransportDetail'
 import { Container, Row, Col, Jumbotron } from 'reactstrap'
 import Logo from '../components/Global/Logo'
-import SpaceScreen from '../components/Global/SpaceScreen'
 import rocketConfig from '../components/Transport/rocketConfig'
 
 export default class transport extends Component {
@@ -29,12 +28,11 @@ export default class transport extends Component {
 
   render () {
     return (
-      <div className='transport'>
-        <SpaceScreen />
+      <div className='transport bg-reservation'>
         <Logo />
         <TransportNav rocket={this.state.rocket} global={this.props.query} />
         <ProgressBar progressValue='60' />
-        <Jumbotron className='pt-4'>
+        <Jumbotron className='pt-4 pb-0 mb-0'>
           <Container>
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Available transport:</p>
@@ -48,7 +46,10 @@ export default class transport extends Component {
             </Row>
           </Container>
         </Jumbotron>
-        <style global jsx>{`          
+        <style global jsx>{`
+          .bg-reservation {
+            background-color: rgba(9, 9, 9, 0.8);
+          }          
           .card {
             background: transparent !important;
           }
