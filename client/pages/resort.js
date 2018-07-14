@@ -38,7 +38,7 @@ export default class Resort extends Component {
         <Logo />
         <ResortNav />
         <ProgressBar progressValue='40' />
-        <Jumbotron className='pt-4'>
+        <Jumbotron className='pt-4 mb-0'>
           <Container>
             <h1 className='display-4'>{this.props.query.name}</h1>
             <p className='lead'>Select your resort:</p>
@@ -50,8 +50,8 @@ export default class Resort extends Component {
         <style global jsx>{`
           .bg-reservation {
             background-color: rgba(9, 9, 9, 0.8);
-            min-height: 100vh;
-            min-width: 100vw;
+            min-height: 100%;
+            min-width: 100%;
           } 
           .btn-outline-danger {
               border: 1px solid #FC5C65 !important;
