@@ -19,7 +19,7 @@ export default class PlanetMenu extends Component {
       return
     }
     return (
-      <Card className='slide animated flipInX'>
+      <Card className='slide animated slideInRight'>
         <CardBody>
           <CardTitle>{this.props.selection}</CardTitle>
           <CardSubtitle>Information</CardSubtitle>
