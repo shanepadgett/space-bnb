@@ -14,8 +14,8 @@ export default class SuitDetail extends Component {
           <Row>
             {Object.keys(this.props.suitConfig).map(key => {
               return (
-                <Col xs='3' className='text-center mb-5 p-0'>
-                  <div className='rounded-circle text-center' key={key} onClick={this.props.changeSuit.bind(this, key)}>
+                <Col xs='3' className='text-center mb-5 p-0' key={key}>
+                  <div className='rounded-circle text-center' onClick={this.props.changeSuit.bind(this, key)}>
                     <img src={this.props.suitConfig[key].img} className='suit-render p-2' alt='Suit render' />
                   </div>
                 </Col>

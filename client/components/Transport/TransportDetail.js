@@ -14,8 +14,8 @@ export default class TransportDetail extends Component {
           <Row>
             {Object.keys(this.props.rocketConfig).map(key => {
               return (
-                <Col xs='3' className='text-center mb-5 p-0'>
-                  <div className='rounded-circle text-center' key={key} onClick={this.props.changeRocket.bind(this, key)}>
+                <Col xs='3' className='text-center mb-5 p-0' key={key}>
+                  <div className='rounded-circle text-center' onClick={this.props.changeRocket.bind(this, key)}>
                     <img src={this.props.rocketConfig[key].img} className='rocket-render p-2' alt='Rocket render' />
                   </div>
                 </Col>

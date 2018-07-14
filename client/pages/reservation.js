@@ -3,7 +3,6 @@ import ReservationNav from '../components/Reservation/ReservationNav'
 import ProgressBar from '../components/ProgressBar'
 import { Container, Row, Col, Jumbotron, Table } from 'reactstrap'
 import Logo from '../components/Global/Logo'
-import SpaceScreen from '../components/Global/SpaceScreen'
 import suitConfig from '../components/Suit/suitConfig'
 import planetConfig from '../lib/threeJS/sceneSubjects/planetConfig'
 import rocketConfig from '../components/Transport/rocketConfig'
@@ -36,7 +35,6 @@ export default class Reservation extends Component {
   render () {
     return (
       <div className='bg-reservation'>
-        <SpaceScreen />
         <Logo />
         <ReservationNav query={this.props.query} />
         <ProgressBar progressValue='100' />
@@ -72,6 +70,8 @@ export default class Reservation extends Component {
         <style global jsx>{`     
           .bg-reservation {
             background-color: rgba(9, 9, 9, 0.8);
+            min-height: 100vh;
+            min-width: 100vw;
           }      
           .card {
             background: transparent !important;

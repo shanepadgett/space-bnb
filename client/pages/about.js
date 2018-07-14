@@ -65,6 +65,8 @@ export default class About extends Component {
         <style global jsx>{`
           .bg-reservation {
             background-color: rgba(9, 9, 9, 0.8);
+            min-height: 100vh;
+            min-width: 100vw;
           } 
         `}</style>
       </div>
