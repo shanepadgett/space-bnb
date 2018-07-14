@@ -11,7 +11,7 @@
 * Save reservations and recall them
 
 ## Check It Out
-*A live demo of SpaceBNB can be found [here]( space-bnb.now.sh)*
+A live demo of SpaceBNB can be found [here](https://space-bnb.now.sh)
 
 #### Current features:
 * Responsive & Mobile-friendly frontend
