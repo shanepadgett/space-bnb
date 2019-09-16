@@ -36,7 +36,7 @@ const ReservationCard = ({ reservation }) => (
 
     <style global jsx>{`
       .bg {
-        background: rgba(0, 0, 0, 0.7)
+        background: rgba(50, 50, 50, 0.6)
       }
     `}</style>
   </Row>
