@@ -64,7 +64,7 @@
     "react-popper": "^1.0.0",
     "react-transition-group": "^2.4.0",
     "reactstrap": "^6.2.0",
-    "three": "^0.94.0",
+    "three": "^0.125.0",
     "validator": "^10.4.0"
   },
   "lint-staged": {
