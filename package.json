@@ -65,7 +65,7 @@
     "react-transition-group": "^2.4.0",
     "reactstrap": "^6.2.0",
     "three": "^0.94.0",
-    "validator": "^10.4.0"
+    "validator": "^13.7.0"
   },
   "lint-staged": {
     "*.js": [
